@@ -1,11 +1,12 @@
 package main
 
 import (
-	_ "FamilyDiary/routers"
-	"github.com/astaxie/beego"
+	"./models"
+	_ "./routers"
 )
 
 func main() {
-	beego.Run()
-}
+	// beego.Run()
+	models.GetUser()
 
+}
