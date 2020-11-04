@@ -1,7 +1,7 @@
 package models
 
 import (
-	"github.com/astaxie/beego"
+	"github.com/astaxie/beego/logs"
 	"github.com/garyburd/redigo/redis"
 )
 
@@ -21,10 +21,10 @@ func Expire(key string, ttl int) (int, error) {
 }
 
 func getRedis(key string) (string, int, error) {
-	beego.BeeLogger.Debug("%s", "---- get redis starting ----")
+	logs.Debug("---- get redis starting ----")
 	conn, err := store.GetRedis()
 	if err != nil {
-		beego.BeeLogger.Debug("%s", "get redis conn failed,err:"+err.Error())
+		logs.Error("get redis conn failed,err:" + err.Error())
 		return "", 0, err
 	}
 
@@ -32,7 +32,7 @@ func getRedis(key string) (string, int, error) {
 
 	val, err := redis.String(conn.Do("GET", key))
 	if err != nil {
-		beego.BeeLogger.Error("%s", "redis exec get failed,err:"+err.Error())
+		logs.Debug("redis exec get failed,err:" + err.Error())
 		return "", 0, err
 	}
 
@@ -42,16 +42,16 @@ func getRedis(key string) (string, int, error) {
 	if len(r) > 1000 {
 		tmp = string(r[0:1000])
 	}
-	beego.BeeLogger.Debug("%s", "---- get redis val:"+tmp+" ----")
+	logs.Debug("---- get redis val:" + tmp + " ----")
 
 	return val, 0, nil
 }
 
 func setRedis(key string, val string, ttl int) (int, error) {
-	beego.BeeLogger.Debug("%s", "---- set redis starting ----")
+	logs.Debug("---- set redis starting ----")
 	conn, err := store.GetRedis()
 	if err != nil {
-		beego.BeeLogger.Debug("%s", "---- get redis conn failed,err:"+err.Error()+" ----")
+		logs.Error("---- get redis conn failed,err:" + err.Error() + " ----")
 		return 0, err
 	}
 
@@ -59,7 +59,7 @@ func setRedis(key string, val string, ttl int) (int, error) {
 
 	_, err = conn.Do("SETEX", key, ttl, val)
 	if err != nil {
-		beego.BeeLogger.Error("%s", "redis set key:"+key+" failed,err:"+err.Error())
+		logs.Error("redis set key:" + key + " failed,err:" + err.Error())
 		return 0, err
 	}
 
@@ -69,16 +69,16 @@ func setRedis(key string, val string, ttl int) (int, error) {
 	if len(r) > 1000 {
 		tmp = string(r[0:1000])
 	}
-	beego.BeeLogger.Debug("%s", "---- get redis val:"+tmp+" ----")
+	logs.Debug("---- get redis val:" + tmp + " ----")
 
 	return 0, nil
 }
 
 func expireRedis(key string, ttl int) (int, error) {
-	beego.BeeLogger.Debug("%s", "---- expire redis starting ----")
+	logs.Debug("---- expire redis starting ----")
 	conn, err := store.GetRedis()
 	if err != nil {
-		beego.BeeLogger.Debug("%s", "---- get redis conn failed,err:"+err.Error()+" ----")
+		logs.Error("---- get redis conn failed,err:" + err.Error() + " ----")
 		return 0, err
 	}
 
@@ -86,7 +86,7 @@ func expireRedis(key string, ttl int) (int, error) {
 
 	_, err = conn.Do("expire", key, ttl)
 	if err != nil {
-		beego.BeeLogger.Error("%s", "redis expire key:"+key+" failed,err:"+err.Error())
+		logs.Error("redis expire key:" + key + " failed,err:" + err.Error())
 		return 0, err
 	}
 

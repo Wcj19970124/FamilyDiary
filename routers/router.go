@@ -8,4 +8,5 @@ import (
 
 func init() {
 	beego.Router("/", &controllers.BaseController{})
+	beego.Router("/login", &controllers.UserLoginController{})
 }

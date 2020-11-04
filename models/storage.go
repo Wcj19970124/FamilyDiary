@@ -4,6 +4,7 @@ import (
 	"errors"
 	"strconv"
 
+	"github.com/astaxie/beego/logs"
 	"github.com/astaxie/beego/orm"
 
 	"github.com/astaxie/beego"
@@ -30,7 +31,7 @@ func (s *Storage) getHolder() map[string]interface{} {
 //第一步：先获取连接池
 //第二步：再冲连接池中取出一个连接
 func (s *Storage) GetRedis() (redis.Conn, error) {
-	beego.BeeLogger.Debug("%s", "---- 开始获取redis连接 ----")
+	logs.Debug("---- 开始获取redis连接 ----")
 	pool, err := s.getRedisPool()
 	if err != nil {
 		return nil, err
@@ -42,7 +43,7 @@ func (s *Storage) GetRedis() (redis.Conn, error) {
 //第一步：检查store中是否已经有连接池,如果有,直接返回
 //第二步：如果没有,则获取配置文件的信息，创建一个连接池返回
 func (s *Storage) getRedisPool() (*redis.Pool, error) {
-	beego.BeeLogger.Debug("%s", "---- 开始获取redis连接池 ----")
+	logs.Debug("---- 开始获取redis连接池 ----")
 	if _, ok := s.holder["redis"].(*redis.Pool); ok {
 		return s.holder["redis"].(*redis.Pool), nil
 	}
@@ -75,7 +76,7 @@ func (s *Storage) getRedisPool() (*redis.Pool, error) {
 
 //获取配置文件中的redis配置信息
 func (s *Storage) getRedisConfig() (maxIdle int, maxActive int, host string, port string, pwd string, err error) {
-	beego.BeeLogger.Debug("%s", "---- 开始获取配置文件信息redis信息 ----")
+	logs.Debug("---- 开始获取配置文件信息redis信息 ----")
 	maxIdle, err = beego.AppConfig.Int("redis::maxIdle")
 	if err != nil {
 		maxIdle, err = 10, nil
@@ -106,7 +107,7 @@ func (s *Storage) getRedisConfig() (maxIdle int, maxActive int, host string, por
 		err = errors.New(txt)
 	}
 
-	beego.BeeLogger.Debug("%s", "---- host:"+host+",port:"+port+",pwd:"+pwd+",maxIdle:"+strconv.Itoa(maxIdle)+",maxActive:"+strconv.Itoa(maxActive)+" ----")
+	logs.Debug("---- host:" + host + ",port:" + port + ",pwd:" + pwd + ",maxIdle:" + strconv.Itoa(maxIdle) + ",maxActive:" + strconv.Itoa(maxActive) + " ----")
 	return maxIdle, maxActive, host, port, pwd, err
 }
 
@@ -114,7 +115,7 @@ func (s *Storage) getRedisConfig() (maxIdle int, maxActive int, host string, por
 //第一步：如果已经存在，直接返回
 //第二步：如果不存在，获取配置信息，连接数据库，返回连接
 func (s *Storage) GetDBProxy() (orm.Ormer, error) {
-	beego.BeeLogger.Debug("%s", "---- 开始获取数据库连接 ----")
+	logs.Debug("---- 开始获取数据库连接 ----")
 	if _, ok := s.holder["db"].(orm.Ormer); ok {
 		return s.holder["db"].(orm.Ormer), nil
 	}
@@ -139,7 +140,7 @@ func (s *Storage) GetDBProxy() (orm.Ormer, error) {
 
 //获取配置文件中数据库的配置信息
 func (s *Storage) getDBConfig() (maxIdle int, maxConn int, user string, pwd string, dbName string, err error) {
-	beego.BeeLogger.Debug("%s", "---- 开始获取配置文件中DB信息 ----")
+	logs.Debug("---- 开始获取配置文件中DB信息 ----")
 	maxIdle, err = beego.AppConfig.Int("db::maxIdle")
 	if err != nil {
 		maxIdle, err = 10, nil
@@ -170,5 +171,6 @@ func (s *Storage) getDBConfig() (maxIdle int, maxConn int, user string, pwd stri
 		err = errors.New(txt)
 	}
 
+	logs.Debug("user:" + user + ",password:" + pwd + ",dbname:" + dbName + ",maxIdle:" + strconv.Itoa(maxIdle) + ",maxConn:" + strconv.Itoa(maxConn))
 	return maxIdle, maxConn, user, pwd, dbName, err
 }

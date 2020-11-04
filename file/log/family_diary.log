@@ -1,0 +1,118 @@
+2020/11/04 11:40:53.687 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/04 11:40:53.688 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/04 11:40:53.688 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/04 11:40:53.688 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/04 11:40:53.689 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/04 11:40:53.867 [D] [cache.go:10]  ---- get redis val:wcj ----
+2020/11/04 15:40:31.734 [D] [login.go:80]  login username:admin,password:admin
+2020/11/04 15:40:31.735 [D] [login.go:85]  ---- user login cache redis key:loginadmin
+2020/11/04 15:40:31.735 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/04 15:40:31.736 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/04 15:40:31.736 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/04 15:40:31.736 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/04 15:40:31.737 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/04 15:40:31.890 [E] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/04 15:40:31.891 [D] [login.go:29]  ---- 开始获取数据库连接 ----
+2020/11/04 15:40:31.891 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/04 15:40:31.891 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/04 15:40:31.903 [D] [login.go:63]  query sql:select password from fd_user where username = ? 
+2020/11/04 15:40:31.904 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   169.8648ms|   match|[46m POST    [0m /login   r:/login
+2020/11/04 15:48:44.550 [C] [asm_amd64.s:1374]  ListenAndServe:  http: Server closed 11448
+2020/11/04 15:52:03.389 [D] [login.go:80]  login username:admin,password:admin
+2020/11/04 15:52:03.390 [D] [login.go:85]  ---- user login cache redis key:loginadmin
+2020/11/04 15:52:03.390 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/04 15:52:03.400 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/04 15:52:03.401 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/04 15:52:03.401 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/04 15:52:03.402 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/04 15:52:03.578 [E] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/04 15:52:03.579 [D] [login.go:30]  ---- 开始获取数据库连接 ----
+2020/11/04 15:52:03.580 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/04 15:52:03.581 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/04 15:52:03.599 [D] [login.go:63]  query sql:select password from fd_user where username = ? ,query result:{"ID":0,"UserName":"","Password":"21232f297a57a5a743894a0e4a801fc3\r\n21232f297a57a5a743894a0e4a801fc3","Head":"","Gender":"","Remark":"","CreateUser":"","UpdateUser":"","Status":"","CreateTime":"0001-01-01T00:00:00Z","UpdateTime":"0001-01-01T00:00:00Z"}
+2020/11/04 15:52:03.606 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   217.4194ms|   match|[46m POST    [0m /login   r:/login
+2020/11/04 15:53:45.990 [D] [login.go:80]  login username:admin,password:admin
+2020/11/04 15:53:45.991 [D] [login.go:85]  ---- user login cache redis key:loginadmin
+2020/11/04 15:53:45.991 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/04 15:53:45.991 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/04 15:53:46.005 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/04 15:53:46.007 [E] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/04 15:53:46.008 [D] [login.go:30]  ---- 开始获取数据库连接 ----
+2020/11/04 15:53:46.009 [D] [login.go:63]  query sql:select password from fd_user where username = ? ,query result:{"ID":0,"UserName":"","Password":"21232f297a57a5a743894a0e4a801fc3\r\n\"21232f297a57a5a743894a0e4a801fc3\"","Head":"","Gender":"","Remark":"","CreateUser":"","UpdateUser":"","Status":"","CreateTime":"0001-01-01T00:00:00Z","UpdateTime":"0001-01-01T00:00:00Z"}
+2020/11/04 15:53:46.010 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|    19.9465ms|   match|[46m POST    [0m /login   r:/login
+2020/11/04 15:54:03.229 [C] [asm_amd64.s:1374]  ListenAndServe:  http: Server closed 20508
+2020/11/04 15:57:02.297 [D] [login.go:80]  login username:admin,password:admin
+2020/11/04 15:57:02.298 [D] [login.go:85]  ---- user login cache redis key:loginadmin
+2020/11/04 15:57:02.298 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/04 15:57:02.298 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/04 15:57:02.307 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/04 15:57:02.307 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/04 15:57:02.308 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/04 15:57:02.457 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/04 15:57:02.458 [D] [login.go:30]  ---- 开始获取数据库连接 ----
+2020/11/04 15:57:02.459 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/04 15:57:02.467 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/04 15:57:02.487 [D] [login.go:63]  query sql:select * from fd_user where username = ? ,query result:{"ID":0,"UserName":"","Password":"21232f297a57a5a743894a0e4a801fc3\r\n\"21232f297a57a5a743894a0e4a801fc3\"","Head":"\"\"","Gender":"0","Remark":"牛皮","CreateUser":"wcj","UpdateUser":"wcj","Status":"0","CreateTime":"2020-11-02T19:56:25+08:00","UpdateTime":"2020-11-03T19:56:35+08:00"}
+2020/11/04 15:57:02.489 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   191.3725ms|   match|[46m POST    [0m /login   r:/login
+2020/11/04 15:59:04.036 [C] [asm_amd64.s:1374]  ListenAndServe:  http: Server closed 4520
+2020/11/04 15:59:18.429 [D] [login.go:80]  login username:admin,password:admin
+2020/11/04 15:59:18.429 [D] [login.go:85]  ---- user login cache redis key:loginadmin
+2020/11/04 15:59:18.430 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/04 15:59:18.440 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/04 15:59:18.441 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/04 15:59:18.441 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/04 15:59:18.442 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/04 15:59:18.590 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/04 15:59:18.592 [D] [login.go:30]  ---- 开始获取数据库连接 ----
+2020/11/04 15:59:18.592 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/04 15:59:18.595 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/04 15:59:18.627 [D] [login.go:63]  query sql:select * from fd_user where username = ? ,query result:{"ID":0,"UserName":"","Password":"21232f297a57a5a743894a0e4a801fc3","Head":"\"\"","Gender":"0","Remark":"牛皮","CreateUser":"wcj","UpdateUser":"wcj","Status":"0","CreateTime":"2020-11-02T19:56:25+08:00","UpdateTime":"2020-11-03T19:56:35+08:00"}
+2020/11/04 15:59:18.628 [D] [cache.go:15]  ---- set redis starting ----
+2020/11/04 15:59:18.629 [D] [cache.go:52]  ---- 开始获取redis连接 ----
+2020/11/04 15:59:18.629 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/04 15:59:18.630 [D] [cache.go:15]  ---- get redis val:21232f297a57a5a743894a0e4a801fc3 ----
+2020/11/04 15:59:18.631 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   201.4886ms|   match|[46m POST    [0m /login   r:/login
+2020/11/04 16:00:24.181 [D] [login.go:80]  login username:admin,password:admin
+2020/11/04 16:00:24.182 [D] [login.go:85]  ---- user login cache redis key:loginadmin
+2020/11/04 16:00:24.182 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/04 16:00:24.193 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/04 16:00:24.194 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/04 16:00:24.194 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/04 16:00:24.195 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/04 16:00:24.354 [D] [cache.go:10]  ---- get redis val:21232f297a57a5a743894a0e4a801fc3 ----
+2020/11/04 16:00:24.355 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   174.4345ms|   match|[46m POST    [0m /login   r:/login
+2020/11/04 16:04:21.736 [D] [login.go:80]  login username:admin,password:admin
+2020/11/04 16:04:21.737 [D] [login.go:85]  ---- user login cache redis key:login_admin
+2020/11/04 16:04:21.737 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/04 16:04:21.737 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/04 16:04:21.737 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/04 16:04:21.737 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/04 16:04:21.737 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/04 16:04:21.892 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/04 16:04:21.893 [D] [login.go:30]  ---- 开始获取数据库连接 ----
+2020/11/04 16:04:21.893 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/04 16:04:21.894 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/04 16:04:21.922 [D] [login.go:63]  query sql:select * from fd_user where username = ? ,query result:{"Id":1,"Username":"admin","Password":"21232f297a57a5a743894a0e4a801fc3","Head":"\"\"","Gender":"0","Remark":"牛皮","CreateUser":"wcj","UpdateUser":"wcj","Status":"0","CreateTime":"2020-11-02T19:56:25+08:00","UpdateTime":"2020-11-03T19:56:35+08:00"}
+2020/11/04 16:04:21.923 [D] [cache.go:15]  ---- set redis starting ----
+2020/11/04 16:04:21.923 [D] [cache.go:52]  ---- 开始获取redis连接 ----
+2020/11/04 16:04:21.924 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/04 16:04:21.926 [D] [cache.go:15]  ---- get redis val:21232f297a57a5a743894a0e4a801fc3 ----
+2020/11/04 16:04:21.927 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   191.4863ms|   match|[46m POST    [0m /login   r:/login
+2020/11/04 16:09:11.135 [C] [asm_amd64.s:1374]  ListenAndServe:  http: Server closed 23020
+2020/11/04 16:11:29.481 [D] [login.go:80]  login username:admin,password:admin
+2020/11/04 16:11:29.482 [D] [login.go:85]  ---- user login cache redis key:login_admin
+2020/11/04 16:11:29.483 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/04 16:11:29.492 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/04 16:11:29.493 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/04 16:11:29.493 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/04 16:11:29.494 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/04 16:11:29.647 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/04 16:11:29.648 [D] [login.go:30]  ---- 开始获取数据库连接 ----
+2020/11/04 16:11:29.648 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/04 16:11:29.657 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/04 16:11:29.669 [D] [login.go:63]  query sql:select password from fd_user where username = ? and status = ?,query result:{"Id":0,"Username":"","Password":"21232f297a57a5a743894a0e4a801fc3","Head":"","Gender":"","Remark":"","CreateUser":"","UpdateUser":"","Status":"","CreateTime":"0001-01-01T00:00:00Z","UpdateTime":"0001-01-01T00:00:00Z"}
+2020/11/04 16:11:29.670 [D] [cache.go:15]  ---- set redis starting ----
+2020/11/04 16:11:29.670 [D] [cache.go:52]  ---- 开始获取redis连接 ----
+2020/11/04 16:11:29.671 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/04 16:11:29.680 [D] [cache.go:15]  ---- get redis val:21232f297a57a5a743894a0e4a801fc3 ----
+2020/11/04 16:11:29.681 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   199.8783ms|   match|[46m POST    [0m /login   r:/login
