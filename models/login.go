@@ -43,3 +43,10 @@ func QueryPwdByUserName(username string) (string, error) {
 	logs.Debug("query sql:" + sql + ",query result:" + util.ConvertStructToString(&user))
 	return user.Password, nil
 }
+
+//GetLoginAdminUserName 获取登陆用户的用户名
+func GetLoginAdminUserName() string {
+	key := "login_admin_username"
+	username, _, _ := GetByKey(key)
+	return username
+}

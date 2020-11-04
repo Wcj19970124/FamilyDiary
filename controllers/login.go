@@ -23,8 +23,7 @@ const (
 	UserNotExist        = 10004 //用户不存在
 )
 
-var userLoginRedisKeyPrefix = "login_" //登陆缓存前缀
-var userLoginRedisCacheSeconds = 3600  //登陆缓存时长
+var userLoginRedisCacheSeconds = 3600 //登陆缓存时长-1h
 
 //参数校验
 func (l *UserLoginController) validParams() error {
@@ -47,17 +46,21 @@ func (l *UserLoginController) validParams() error {
 	return nil
 }
 
-//登陆校验
-//第一步：先检查缓存中是否存在登陆信息,有则不用重复登陆
+//登陆校验:超管同一时间只能有一人登陆
+//第一步：先检查缓存中是否存在登陆信息,有则验证是否是本人,是则不用重复登陆,不是则重新登陆
 //第二步：若缓存没有,查询数据库,若数据库没有,直接返回
 //第三步：若数据库存在,则校验数据,正确则写缓存,不正确直接返回
 func (l *UserLoginController) checkLogin() error {
 
-	loginKey := userLoginRedisKeyPrefix + l._username
-	logs.Debug("---- user login cache redis key:" + loginKey)
-	if val, _, err := models.GetByKey(loginKey); err == nil || val != "" {
-		l.OutPut(200, "已登陆！")
-		return errors.New("已登录")
+	loginPasswordKey := "login_admin_password"
+	loginUserNameKey := "login_admin_username"
+	logs.Debug("---- user login cache redis key:" + loginPasswordKey)
+	if val, _, err := models.GetByKey(loginPasswordKey); err == nil && val != "" {
+		if val != util.MD5(l._password) {
+		} else {
+			l.OutPut(200, "已登陆！")
+			return errors.New("已登录")
+		}
 	}
 
 	password, _ := models.QueryPwdByUserName(l._username)
@@ -70,7 +73,8 @@ func (l *UserLoginController) checkLogin() error {
 		return errors.New("密码错误")
 	}
 
-	models.SetByKey(loginKey, password, userLoginRedisCacheSeconds)
+	models.SetByKey(loginPasswordKey, password, userLoginRedisCacheSeconds)
+	models.SetByKey(loginUserNameKey, l._username, userLoginRedisCacheSeconds)
 
 	return nil
 }

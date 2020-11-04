@@ -13,5 +13,4 @@ func init() {
 
 func main() {
 	beego.Run()
-	// models.GetByKey("name")
 }

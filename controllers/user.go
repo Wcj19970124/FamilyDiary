@@ -1,6 +1,81 @@
 package controllers
 
+import (
+	"encoding/json"
+
+	"github.com/astaxie/beego/logs"
+
+	"../models"
+)
+
 //UserController 后台用户数据体
 type UserController struct {
 	BaseController
+}
+
+//用户操作错误码
+const (
+	UserAddErr       = 30001 //添加用户失败
+	UserDelErr       = 30002 //删除用户失败
+	UserUpdateErr    = 30003 //更新用户失败
+	UserQueryErr     = 30004 //查询用户失败
+	PermissionDenied = 30005 //无权限
+)
+
+//登陆态和权限校验
+func (u *UserController) verificate() bool {
+	return u.Verificate()
+}
+
+//AddUser 添加用户
+func (u *UserController) AddUser() {
+	//TODD:基础校验
+	if ok := u.verificate(); !ok {
+		return
+	}
+	//TODD：添加用户
+	var user models.User
+	if json.Unmarshal(u.Ctx.Input.RequestBody, &user) == nil {
+		if err := models.AddUser(user); err != nil {
+			u.OutPut(UserAddErr, "添加用户失败！")
+			return
+		}
+		u.OutPut(200, "添加用户成功!")
+	}
+}
+
+//DelUser 删除用户
+func (u *UserController) DelUser() {
+	//TODD:基础校验
+	if ok := u.verificate(); !ok {
+		return
+	}
+	//TODD：删除用户
+	if id, err := u.GetInt("id"); err == nil {
+		if err = models.DelUser(id); err != nil {
+			u.OutPut(UserDelErr, "删除用户失败!")
+			return
+		}
+		u.OutPut(200, "删除用户成功!")
+	}
+}
+
+//UpdateUser 修改用户信息
+func (u *UserController) UpdateUser() {
+	logs.Debug("---- 请求到达")
+
+	//TODD:基础校验
+	if ok := u.verificate(); !ok {
+		return
+	}
+	//TODD：修改用户
+	var user models.User
+	if json.Unmarshal(u.Ctx.Input.RequestBody, &user) == nil {
+		logs.Debug("解析完成啦")
+		if err := models.UpdateUser(user); err != nil {
+			u.OutPut(UserUpdateErr, "用户信息更新失败!")
+			return
+		}
+		u.OutPut(200, "用户信息更新成功!")
+	}
 }

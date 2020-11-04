@@ -3,12 +3,28 @@ package controllers
 import (
 	"encoding/json"
 
+	"../verificate"
 	"github.com/astaxie/beego"
 )
 
 //BaseController 基础数据体
 type BaseController struct {
 	beego.Controller
+}
+
+//Verificate 校验用户登陆状态和权限
+func (b *BaseController) Verificate() bool {
+	//TODD:登陆校验
+	if ok := verificate.AdminLogin(); !ok {
+		b.OutPut(UserNotLogin, "登陆已失效,请重新登陆!")
+		return false
+	}
+	//TODD:权限校验
+	if ok := verificate.AdminPermission(); !ok {
+		b.OutPut(PermissionDenied, "对不起,您没有此权限！")
+		return false
+	}
+	return true
 }
 
 //OutPut 无data数据输出
