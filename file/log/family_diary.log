@@ -1,0 +1,21 @@
+2020/11/04 20:14:06.797 [D] [value.go:475]  ---- 请求到达
+2020/11/04 20:14:06.797 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/04 20:14:06.798 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/04 20:14:06.798 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/04 20:14:06.798 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/04 20:14:06.799 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/04 20:14:06.949 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/04 20:14:06.950 [D] [value.go:475]  解析完成啦
+2020/11/04 20:14:06.950 [D] [user.go:54]  ---- 开始获取数据库连接 ----
+2020/11/04 20:14:06.951 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/04 20:14:06.951 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/04 20:14:06.958 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/04 20:14:06.959 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/04 20:14:06.959 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/04 20:14:06.960 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/04 20:14:06.960 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/04 20:14:06.961 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/04 20:14:06.961 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/04 20:14:06.962 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/04 20:14:07.000 [D] [user.go:75]  --- update user sql:update fd_user set username=?,password=?,head=?,gender=?,remark=?,create_user=?,create_time=?,update_user=?,update_time=?,status=? where id = ?
+2020/11/04 20:14:07.003 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   206.5427ms|   match|[43m PUT     [0m /update/user   r:/update/user

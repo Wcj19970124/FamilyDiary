@@ -3,8 +3,6 @@ package controllers
 import (
 	"encoding/json"
 
-	"github.com/astaxie/beego/logs"
-
 	"../models"
 )
 
@@ -62,7 +60,6 @@ func (u *UserController) DelUser() {
 
 //UpdateUser 修改用户信息
 func (u *UserController) UpdateUser() {
-	logs.Debug("---- 请求到达")
 
 	//TODD:基础校验
 	if ok := u.verificate(); !ok {
@@ -71,7 +68,6 @@ func (u *UserController) UpdateUser() {
 	//TODD：修改用户
 	var user models.User
 	if json.Unmarshal(u.Ctx.Input.RequestBody, &user) == nil {
-		logs.Debug("解析完成啦")
 		if err := models.UpdateUser(user); err != nil {
 			u.OutPut(UserUpdateErr, "用户信息更新失败!")
 			return
