@@ -52,11 +52,10 @@ func (l *UserLoginController) validParams() error {
 //第三步：若数据库存在,则校验数据,正确则写缓存,不正确直接返回
 func (l *UserLoginController) checkLogin() error {
 
-	loginPasswordKey := "login_admin_password"
 	loginUserNameKey := "login_admin_username"
-	logs.Debug("---- user login cache redis key:" + loginPasswordKey)
-	if val, _, err := models.GetByKey(loginPasswordKey); err == nil && val != "" {
-		if val != util.MD5(l._password) {
+	logs.Debug("---- user login cache redis key1:" + loginUserNameKey)
+	if val, _, err := models.GetByKey(loginUserNameKey); err == nil && val != "" {
+		if val != l._username {
 		} else {
 			l.OutPut(200, "已登陆！")
 			return errors.New("已登录")
@@ -73,7 +72,6 @@ func (l *UserLoginController) checkLogin() error {
 		return errors.New("密码错误")
 	}
 
-	models.SetByKey(loginPasswordKey, password, userLoginRedisCacheSeconds)
 	models.SetByKey(loginUserNameKey, l._username, userLoginRedisCacheSeconds)
 
 	return nil

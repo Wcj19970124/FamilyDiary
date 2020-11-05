@@ -1,26 +1,9 @@
 package models
 
 import (
-	"time"
-
 	"../util"
 	"github.com/astaxie/beego/logs"
 )
-
-//User 后台用户结构体
-type User struct {
-	Id         int
-	Username   string
-	Password   string
-	Head       string
-	Gender     string
-	Remark     string
-	CreateUser string
-	UpdateUser string
-	Status     string
-	CreateTime time.Time
-	UpdateTime time.Time
-}
 
 //QueryPwdByUserName 根据用户名查询用户密码
 func QueryPwdByUserName(username string) (string, error) {
