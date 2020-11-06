@@ -152,3 +152,26 @@ func QueryRoles(p common.Page) (map[string]interface{}, error) {
 
 	return m, nil
 }
+
+//AllocatePermissions 角色分配权限
+func AllocatePermissions(param map[string]interface{}) error {
+
+	sql := "insert into fd_role_permission(role_id,permission_id,create_user,create_time,update_user,update_time,status) values(?,?,?,?,?,?,?)"
+	dbProxy, err := store.GetDBProxy()
+	if err != nil {
+		logs.Error("---- get db proxy failed,err:" + err.Error() + " ----")
+		return err
+	}
+
+	roleID := int(param["id"].(float64))
+	permissionIds := param["permissionIds"].([]interface{})
+	for _, permissionID := range permissionIds {
+		_, err = dbProxy.Raw(sql, roleID, permissionID, GetLoginAdminUserName(), time.Now(), GetLoginAdminUserName(), time.Now(), 0).Exec()
+		if err != nil {
+			logs.Error("---- insert role permission info failed,err:" + err.Error())
+			return err
+		}
+	}
+
+	return nil
+}

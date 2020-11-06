@@ -2,7 +2,9 @@ package controllers
 
 import (
 	"encoding/json"
+	"time"
 
+	"../models"
 	"../verificate"
 	"github.com/astaxie/beego"
 )
@@ -53,4 +55,9 @@ func (b *BaseController) OutPutList(ret int, msg string, data map[string]interfa
 
 	b.Ctx.ResponseWriter.Header().Set("Content-Type", "application/json;charset=utf-8")
 	b.Ctx.WriteString(string(res))
+}
+
+//Report 数据上报 --- 写日志
+func (b *BaseController) Report(ip string, t string, method string, fail string, function string, operateUser string, description string, operateTime time.Time) {
+	models.AddSysLog(ip, t, method, fail, function, operateUser, description, operateTime)
 }

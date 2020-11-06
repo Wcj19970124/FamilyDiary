@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"encoding/json"
+	"time"
 
 	"../common"
 	"../models"
@@ -36,13 +37,16 @@ func (p *PermissionController) AddPermission() {
 	var permission models.Permission
 	if json.Unmarshal(p.Ctx.Input.RequestBody, &permission) == nil {
 		if ok := models.GetPermissionByPermissionName(permission.PermissionName); !ok {
+			p.Report(p.Ctx.Input.IP(), "1", "POST", "1", "AddPermission", models.GetLoginAdminUserName(), "权限已存在", time.Now())
 			p.OutPut(PermissionAlreadyExists, "权限已存在!")
 			return
 		}
 		if err := models.AddPermission(permission); err != nil {
+			p.Report(p.Ctx.Input.IP(), "1", "POST", "1", "AddPermission", models.GetLoginAdminUserName(), "权限添加失败", time.Now())
 			p.OutPut(PermissionAddErr, "权限添加失败")
 			return
 		}
+		p.Report(p.Ctx.Input.IP(), "1", "POST", "0", "AddPermission", models.GetLoginAdminUserName(), "权限添加成功", time.Now())
 		p.OutPut(200, "权限添加成功!")
 	}
 }
@@ -56,9 +60,11 @@ func (p *PermissionController) DelPermission() {
 	//TODD：删除权限
 	if id, err := p.GetInt("id"); err == nil {
 		if err := models.DelPermission(id); err != nil {
+			p.Report(p.Ctx.Input.IP(), "1", "DELETE", "1", "DelPermission", models.GetLoginAdminUserName(), "权限删除失败", time.Now())
 			p.OutPut(PermissionDelErr, "权限删除失败!")
 			return
 		}
+		p.Report(p.Ctx.Input.IP(), "1", "DELETE", "0", "DelPermission", models.GetLoginAdminUserName(), "权限删除成功", time.Now())
 		p.OutPut(200, "权限删除成功!")
 	}
 }
@@ -73,13 +79,16 @@ func (p *PermissionController) UpdatePermission() {
 	var permission models.Permission
 	if json.Unmarshal(p.Ctx.Input.RequestBody, &permission) == nil {
 		if ok := models.GetPermissionByPermissionName(permission.PermissionName); !ok {
+			p.Report(p.Ctx.Input.IP(), "1", "PUT", "1", "UpdatePermission", models.GetLoginAdminUserName(), "权限已存在", time.Now())
 			p.OutPut(PermissionAlreadyExists, "权限已存在!")
 			return
 		}
 		if err := models.UpdatePermission(permission); err != nil {
+			p.Report(p.Ctx.Input.IP(), "1", "PUT", "1", "UpdatePermission", models.GetLoginAdminUserName(), "权限更新失败", time.Now())
 			p.OutPut(PermissionUpdateErr, "权限更新失败!")
 			return
 		}
+		p.Report(p.Ctx.Input.IP(), "1", "PUT", "0", "UpdatePermission", models.GetLoginAdminUserName(), "权限更新成功", time.Now())
 		p.OutPut(200, "权限更新成功!")
 	}
 }
@@ -94,9 +103,11 @@ func (p *PermissionController) QueryPermission() {
 	if id, err := p.GetInt("id"); err == nil {
 		data, err := models.QueryPermission(id)
 		if err != nil {
+			p.Report(p.Ctx.Input.IP(), "1", "GET", "1", "QueryPermission", models.GetLoginAdminUserName(), "权限查询失败", time.Now())
 			p.OutPut(PermissionQueryErr, "权限查询失败!")
 			return
 		}
+		p.Report(p.Ctx.Input.IP(), "1", "GET", "0", "QueryPermission", models.GetLoginAdminUserName(), "权限查询成功", time.Now())
 		p.OutPutList(200, "权限查询成功!", data)
 	}
 }
@@ -112,9 +123,11 @@ func (p *PermissionController) QueryPermissions() {
 	if json.Unmarshal(p.Ctx.Input.RequestBody, &page) == nil {
 		data, err := models.QueryPermissions(page)
 		if err != nil {
+			p.Report(p.Ctx.Input.IP(), "1", "POST", "1", "QueryPermissions", models.GetLoginAdminUserName(), "权限列表查询失败", time.Now())
 			p.OutPut(PermissionQueryErr, "权限列表查询失败!")
 			return
 		}
+		p.Report(p.Ctx.Input.IP(), "1", "POST", "0", "QueryPermissions", models.GetLoginAdminUserName(), "权限列表查询成功", time.Now())
 		p.OutPutList(200, "权限列表查询成功!", data)
 	}
 }
@@ -128,8 +141,10 @@ func (p *PermissionController) QueryPermissionsTree() {
 	//TODD：查询权限列表,以树状图显示
 	data, err := models.QueryPermissionsTree()
 	if err != nil {
-		p.OutPut(PermissionQueryErr,"权限树查询失败!")
+		p.Report(p.Ctx.Input.IP(), "1", "GET", "1", "QueryPermissionsTree", models.GetLoginAdminUserName(), "权限树查询失败", time.Now())
+		p.OutPut(PermissionQueryErr, "权限树查询失败!")
 		return
 	}
-	p.OutPutList(200,"权限树查询成功!",data)
+	p.Report(p.Ctx.Input.IP(), "1", "GET", "0", "QueryPermissionsTree", models.GetLoginAdminUserName(), "权限树查询成功", time.Now())
+	p.OutPutList(200, "权限树查询成功!", data)
 }

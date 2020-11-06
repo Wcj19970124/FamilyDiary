@@ -159,3 +159,26 @@ func GetUsers(p common.Page) (map[string]interface{}, error) {
 
 	return m, nil
 }
+
+//AllocateRoles 用户分配角色
+func AllocateRoles(param map[string]interface{}) error {
+
+	sql := "insert into fd_user_role(user_id,role_id,create_user,create_time,update_user,update_time,status) values(?,?,?,?,?,?,?)"
+	dbProxy, err := store.GetDBProxy()
+	if err != nil {
+		logs.Error("---- get db proxy failed,err:" + err.Error() + " ----")
+		return err
+	}
+
+	userID := int(param["id"].(float64))
+	roleIds := param["roleIds"].([]interface{})
+	for _, roleID := range roleIds {
+		_, err = dbProxy.Raw(sql, userID, roleID, GetLoginAdminUserName(), time.Now(), GetLoginAdminUserName(), time.Now(), 0).Exec()
+		if err != nil {
+			logs.Error("---- insert user role info failed,err:" + err.Error())
+			return err
+		}
+	}
+
+	return nil
+}

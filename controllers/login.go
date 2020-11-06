@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"errors"
+	"time"
 
 	"../models"
 	"../util"
@@ -31,6 +32,7 @@ func (l *UserLoginController) validParams() error {
 	if username := l.GetString("username"); username != "" {
 		l._username = username
 	} else {
+		l.Report(l.Ctx.Input.IP(), "0", "GET", "1", "validParams", models.GetLoginAdminUserName(), "参数为空(username)", time.Now())
 		l.OutPut(UserLoginParamNull, "参数为空(username)")
 		return errors.New("参数为空")
 	}
@@ -38,6 +40,7 @@ func (l *UserLoginController) validParams() error {
 	if password := l.GetString("password"); password != "" {
 		l._password = password
 	} else {
+		l.Report(l.Ctx.Input.IP(), "0", "GET", "1", "validParams", models.GetLoginAdminUserName(), "参数为空(password)", time.Now())
 		l.OutPut(UserLoginParamNull, "参数为空(password)")
 		return errors.New("参数为空")
 	}
@@ -57,6 +60,7 @@ func (l *UserLoginController) checkLogin() error {
 	if val, _, err := models.GetByKey(loginUserNameKey); err == nil && val != "" {
 		if val != l._username {
 		} else {
+			l.Report(l.Ctx.Input.IP(), "0", "GET", "0", "checkLogin", models.GetLoginAdminUserName(), "已登陆！", time.Now())
 			l.OutPut(200, "已登陆！")
 			return errors.New("已登录")
 		}
@@ -64,10 +68,12 @@ func (l *UserLoginController) checkLogin() error {
 
 	password, _ := models.QueryPwdByUserName(l._username)
 	if password == "" {
+		l.Report(l.Ctx.Input.IP(), "0", "GET", "1", "checkLogin", models.GetLoginAdminUserName(), "用户不存在", time.Now())
 		l.OutPut(UserNotExist, "用户不存在!")
 		return errors.New("用户不存在！")
 	}
 	if password != util.MD5(l._password) {
+		l.Report(l.Ctx.Input.IP(), "0", "GET", "1", "checkLogin", models.GetLoginAdminUserName(), "密码错误", time.Now())
 		l.OutPut(UserLoginParamError, "密码错误!")
 		return errors.New("密码错误")
 	}
@@ -89,5 +95,6 @@ func (l *UserLoginController) Post() {
 		return
 	}
 
+	l.Report(l.Ctx.Input.IP(), "0", "GET", "0", "checkLogin", models.GetLoginAdminUserName(), "登陆成功", time.Now())
 	l.OutPut(200, "登陆成功")
 }
