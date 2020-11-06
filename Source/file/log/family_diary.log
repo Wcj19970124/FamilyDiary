@@ -1,0 +1,18 @@
+2020/11/06 19:30:37.421 [C] [asm_amd64.s:1374]  ListenAndServe:  http: Server closed 26768
+2020/11/06 19:53:31.387 [D] [login.go:88]  login username:admin,password:admin
+2020/11/06 19:53:31.389 [D] [login.go:93]  ---- user login cache redis key1:login_admin_username
+2020/11/06 19:53:31.393 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/06 19:53:31.394 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/06 19:53:31.395 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/06 19:53:31.396 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/06 19:53:31.396 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/06 19:53:31.564 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/06 19:53:31.565 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/06 19:53:31.565 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/06 19:53:31.569 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/06 19:53:31.570 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/06 19:53:31.571 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/06 19:53:31.571 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/06 19:53:31.572 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/06 19:53:31.578 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/06 19:53:31.629 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   241.3543ms|   match|[46m POST    [0m /user/login   r:/user/login
