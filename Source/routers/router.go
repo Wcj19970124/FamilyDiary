@@ -8,15 +8,23 @@ import (
 
 func init() {
 	beego.Router("/", &controllers.BaseController{})
+
+	//后台用户登陆
 	beego.Router("/user/login", &controllers.UserLoginController{})
 
+	//后台用户登出
+	beego.Router("/user/logout", &controllers.UserLogoutController{})
+
 	//用户管理
+	beego.Router("/user/info", &controllers.UserController{}, "get:QueryLoginUserInfo")
 	beego.Router("/add/user", &controllers.UserController{}, "post:AddUser")
 	beego.Router("/del/user", &controllers.UserController{}, "delete:DelUser")
 	beego.Router("/update/user", &controllers.UserController{}, "put:UpdateUser")
 	beego.Router("/get/user", &controllers.UserController{}, "get:QueryUser")
 	beego.Router("/get/users", &controllers.UserController{}, "post:QueryUsers")
 	beego.Router("/allocate/userRoles", &controllers.UserController{}, "post:AllocateRoles")
+	beego.Router("/get/userRoles", &controllers.UserController{}, "get:QueryUserRoles")
+	beego.Router("/update/userRoles", &controllers.UserController{}, "post:UpdateUserRoles")
 
 	//角色管理
 	beego.Router("/add/role", &controllers.RoleController{}, "post:AddRole")
@@ -25,6 +33,8 @@ func init() {
 	beego.Router("/get/role", &controllers.RoleController{}, "get:QueryRole")
 	beego.Router("/get/roles", &controllers.RoleController{}, "post:QueryRoles")
 	beego.Router("/allocate/rolePermissions", &controllers.RoleController{}, "post:AllocatePermissions")
+	beego.Router("/get/rolePermissions", &controllers.RoleController{}, "get:QueryRolePermissions")
+	beego.Router("/update/rolePermissions", &controllers.RoleController{}, "post:UpdateRolePermissions")
 
 	//权限管理
 	beego.Router("/add/permission", &controllers.PermissionController{}, "post:AddPermission")

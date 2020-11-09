@@ -173,13 +173,13 @@ func QueryPermissionsTree() (map[string]interface{}, error) {
 		return nil, err
 	}
 
-	m := convertPermissionsToPermissionTree(permissions)
+	m := ConvertPermissionsToPermissionTree(permissions)
 
 	return m, nil
 }
 
 //将权限转换为权限树 --- 递归转换
-func convertPermissionsToPermissionTree(permissions []*Permission) map[string]interface{} {
+func ConvertPermissionsToPermissionTree(permissions []*Permission) map[string]interface{} {
 
 	root := make(map[string]interface{})
 	permissionTree := []*Permission{}

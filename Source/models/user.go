@@ -182,3 +182,86 @@ func AllocateRoles(param map[string]interface{}) error {
 
 	return nil
 }
+
+//QueryUserRoles 根据用户id查询用户角色
+func QueryUserRoles(id int) (map[string]interface{}, error) {
+
+	sql := "select id, role_name,description from fd_role where id in(select role_id from fd_user_role where user_id = ?)"
+	dbProxy, err := store.GetDBProxy()
+	if err != nil {
+		logs.Error("---- get db proxy failed,err:" + err.Error() + " ----")
+		return nil, err
+	}
+
+	var role []Role
+	_, err = dbProxy.Raw(sql, id).QueryRows(&role)
+	if err != nil {
+		logs.Error("---- get user role by userId failed,err:" + err.Error())
+		return nil, err
+	}
+
+	m := make(map[string]interface{})
+	m["userRoles"] = role
+
+	return m, nil
+}
+
+//UpdateUserRoles 更新用户角色
+//先破坏原有的用户角色关系，然后再添加新的
+func UpdateUserRoles(param map[string]interface{}) error {
+
+	sql1 := "delete from fd_user_role where user_id = ?"
+	dbProxy, err := store.GetDBProxy()
+	if err != nil {
+		logs.Error("---- get db proxy failed,err:" + err.Error() + " ----")
+		return err
+	}
+
+	dbProxy.Begin() //开启事务
+
+	userID := int(param["userId"].(float64))
+	roleIds := param["roleIds"].([]interface{})
+	_, err = dbProxy.Raw(sql1, userID).Exec()
+	if err != nil {
+		logs.Error("---- delete uesr role failed,err:" + err.Error())
+		dbProxy.Rollback() //执行失败进行回滚
+		return err
+	}
+
+	sql2 := "insert into fd_user_role(user_id,role_id,create_user,create_time,update_user,update_time,status) values(?,?,?,?,?,?,?)"
+	for _, roleID := range roleIds {
+		_, err = dbProxy.Raw(sql2, userID, roleID, GetLoginAdminUserName(), time.Now(), GetLoginAdminUserName(), time.Now(), 0).Exec()
+		if err != nil {
+			logs.Error("---- insert user role failed,err:" + err.Error())
+			dbProxy.Rollback() //执行失败进行回滚
+			return err
+		}
+	}
+
+	return nil
+}
+
+//QueryLoginUserInfo 获取登陆用户信息
+func QueryLoginUserInfo() (map[string]interface{}, error) {
+
+	username := GetLoginAdminUserName()
+
+	sql := "select id,username,password,head,gender,remark from fd_user where username = ?"
+	dbProxy, err := store.GetDBProxy()
+	if err != nil {
+		logs.Error("---- get db proxy failed,err:" + err.Error() + " ----")
+		return nil, err
+	}
+
+	var user User
+	err = dbProxy.Raw(sql, username).QueryRow(&user)
+	if err != nil {
+		logs.Error("---- get login user info failed,err:" + err.Error())
+		return nil, err
+	}
+
+	m := make(map[string]interface{})
+	m["admin"] = user
+
+	return m, nil
+}

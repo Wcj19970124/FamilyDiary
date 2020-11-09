@@ -16,3 +16,1579 @@
 2020/11/06 19:53:31.572 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
 2020/11/06 19:53:31.578 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
 2020/11/06 19:53:31.629 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   241.3543ms|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 10:15:44.858 [D] [server.go:2843]  |      127.0.0.1|[43m 404 [0m|     1.0275ms| nomatch|[46m POST    [0m /get/userRoles
+2020/11/09 10:15:56.698 [D] [login.go:88]  login username:admin,password:admin
+2020/11/09 10:15:56.699 [D] [login.go:93]  ---- user login cache redis key1:login_admin_username
+2020/11/09 10:15:56.699 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:15:56.710 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:15:56.711 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:15:56.712 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 10:15:56.713 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 10:15:56.913 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 10:15:56.918 [D] [login.go:13]  ---- 开始获取数据库连接 ----
+2020/11/09 10:15:56.918 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 10:15:56.918 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 10:15:56.947 [D] [login.go:69]  query sql:select password from fd_user where username = ? and status = 0,query result:{"Id":0,"Username":"","Password":"21232f297a57a5a743894a0e4a801fc3","Head":"","Gender":"","Remark":"","CreateUser":"","UpdateUser":"","Status":"","CreateTime":"0001-01-01T00:00:00Z","UpdateTime":"0001-01-01T00:00:00Z"}
+2020/11/09 10:15:56.948 [D] [cache.go:15]  ---- set redis starting ----
+2020/11/09 10:15:56.951 [D] [cache.go:52]  ---- 开始获取redis连接 ----
+2020/11/09 10:15:56.952 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:15:56.954 [D] [cache.go:15]  ---- get redis val:admin ----
+2020/11/09 10:15:56.955 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:15:56.955 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:15:56.956 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:15:56.957 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:15:56.958 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 10:15:56.958 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 10:15:57.016 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   318.1495ms|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 10:16:28.480 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:16:28.480 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:16:28.481 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:16:28.493 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:16:28.494 [D] [user.go:190]  ---- 开始获取数据库连接 ----
+2020/11/09 10:16:28.498 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:16:28.499 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:16:28.499 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:16:28.500 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:16:28.501 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 10:16:28.502 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 10:16:28.556 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|    76.7958ms|   match|[44m GET     [0m /get/userRoles   r:/get/userRoles
+2020/11/09 10:17:50.328 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:17:50.328 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:17:50.328 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:17:50.340 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:17:50.340 [D] [user.go:214]  ---- 开始获取数据库连接 ----
+2020/11/09 10:17:50.434 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:17:50.435 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:17:50.435 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:17:50.436 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:17:50.439 [E] [user.go:190]  ---- insert user role failed,err:Error 1364: Field 'create_user' doesn't have a default value
+2020/11/09 10:17:50.440 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:17:50.440 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:17:50.440 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:17:50.441 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:17:50.442 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 10:17:50.442 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 10:17:50.534 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:17:50.535 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:17:50.536 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:17:50.544 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:17:50.544 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 10:17:50.545 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 10:17:50.596 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   268.2554ms|   match|[46m POST    [0m /update/userRoles   r:/update/userRoles
+2020/11/09 10:18:55.807 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:18:55.808 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:18:55.809 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:18:55.818 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 10:18:55.818 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 10:18:55.976 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:18:55.977 [D] [user.go:190]  ---- 开始获取数据库连接 ----
+2020/11/09 10:18:55.977 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 10:18:55.985 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 10:18:55.995 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:18:55.995 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:18:55.996 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:18:55.996 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:18:55.997 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 10:18:55.997 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 10:18:56.032 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   224.3969ms|   match|[44m GET     [0m /get/userRoles   r:/get/userRoles
+2020/11/09 10:19:32.154 [D] [server.go:2843]  |      127.0.0.1|[43m 404 [0m|           0s| nomatch|[44m GET     [0m /allocate/userRoles
+2020/11/09 10:19:38.323 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:19:38.324 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:19:38.324 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:19:38.333 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 10:19:38.333 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 10:19:38.515 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:19:38.517 [D] [user.go:167]  ---- 开始获取数据库连接 ----
+2020/11/09 10:19:38.520 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 10:19:38.521 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 10:19:38.528 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:19:38.528 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:19:38.528 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:19:38.529 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:19:38.529 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:19:38.530 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:19:38.530 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:19:38.531 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:19:38.581 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:19:38.582 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:19:38.582 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:19:38.583 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:19:38.583 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:19:38.590 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:19:38.591 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:19:38.591 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:19:38.629 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:19:38.630 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:19:38.630 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:19:38.631 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:19:38.631 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 10:19:38.632 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 10:19:38.681 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|    358.089ms|   match|[46m POST    [0m /allocate/userRoles   r:/allocate/userRoles
+2020/11/09 10:19:44.773 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:19:44.773 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:19:44.774 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:19:44.774 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:19:44.786 [D] [user.go:190]  ---- 开始获取数据库连接 ----
+2020/11/09 10:19:44.793 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:19:44.793 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:19:44.794 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:19:44.795 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:19:44.796 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 10:19:44.796 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 10:19:44.842 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|    68.8163ms|   match|[44m GET     [0m /get/userRoles   r:/get/userRoles
+2020/11/09 10:19:48.225 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:19:48.226 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:19:48.226 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:19:48.227 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:19:48.237 [D] [user.go:214]  ---- 开始获取数据库连接 ----
+2020/11/09 10:19:48.299 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:19:48.299 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:19:48.300 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:19:48.301 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:19:48.304 [E] [user.go:191]  ---- insert user role failed,err:Error 1364: Field 'create_user' doesn't have a default value
+2020/11/09 10:19:48.305 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:19:48.305 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:19:48.306 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:19:48.307 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:19:48.307 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 10:19:48.307 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 10:19:48.343 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   117.6845ms|   match|[46m POST    [0m /update/userRoles   r:/update/userRoles
+2020/11/09 10:21:22.466 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:21:22.467 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:21:22.467 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:21:22.467 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 10:21:22.477 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 10:21:24.925 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:21:24.925 [D] [user.go:214]  ---- 开始获取数据库连接 ----
+2020/11/09 10:21:24.925 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 10:21:24.926 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 10:21:24.949 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:21:24.949 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:21:24.950 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:21:24.951 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:21:24.951 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:21:24.952 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:21:24.952 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:21:24.953 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:21:24.965 [E] [user.go:191]  ---- insert user role failed,err:Error 1364: Field 'status' doesn't have a default value
+2020/11/09 10:21:24.965 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:21:24.965 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:21:24.966 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:21:24.967 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:21:24.968 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 10:21:24.968 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 10:21:25.014 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   2.5479897s|   match|[46m POST    [0m /update/userRoles   r:/update/userRoles
+2020/11/09 10:22:08.093 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:22:08.093 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:22:08.094 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:22:08.094 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 10:22:08.104 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 10:22:08.311 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:22:08.312 [D] [user.go:214]  ---- 开始获取数据库连接 ----
+2020/11/09 10:22:08.312 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 10:22:08.313 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 10:22:08.337 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:22:08.338 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:22:08.338 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:22:08.339 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:22:08.340 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:22:08.340 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:22:08.346 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:22:08.348 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:22:08.421 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:22:08.423 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:22:08.423 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:22:08.430 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:22:08.430 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:22:08.431 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:22:08.431 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:22:08.432 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:22:08.469 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:22:08.470 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:22:08.470 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:22:08.471 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:22:08.472 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:22:08.472 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:22:08.472 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:22:08.473 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:22:08.513 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:22:08.514 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:22:08.515 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:22:08.521 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:22:08.522 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 10:22:08.523 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 10:22:08.625 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   532.8562ms|   match|[46m POST    [0m /update/userRoles   r:/update/userRoles
+2020/11/09 10:52:07.685 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:52:07.685 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:52:07.686 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:52:07.686 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 10:52:07.698 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 10:52:07.847 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:52:07.847 [C] [panic.go:969]  the request url is  /get/rolePermissions
+2020/11/09 10:52:07.848 [C] [panic.go:969]  Handler crashed with error can't find templatefile in the path:views/rolecontroller/queryrolepermissions.tpl
+2020/11/09 10:52:07.849 [C] [panic.go:969]  D:/go/src/runtime/panic.go:969
+2020/11/09 10:52:07.861 [C] [panic.go:969]  D:/GoWorks/src/github.com/astaxie/beego/template.go:75
+2020/11/09 10:52:07.862 [C] [panic.go:969]  D:/GoWorks/src/github.com/astaxie/beego/controller.go:306
+2020/11/09 10:52:07.863 [C] [panic.go:969]  D:/GoWorks/src/github.com/astaxie/beego/controller.go:257
+2020/11/09 10:52:07.863 [C] [panic.go:969]  D:/GoWorks/src/github.com/astaxie/beego/controller.go:237
+2020/11/09 10:52:07.864 [C] [panic.go:969]  D:/GoWorks/src/github.com/astaxie/beego/router.go:909
+2020/11/09 10:52:07.864 [C] [panic.go:969]  D:/go/src/net/http/server.go:2843
+2020/11/09 10:52:07.864 [C] [panic.go:969]  D:/go/src/net/http/server.go:1925
+2020/11/09 10:52:07.865 [C] [panic.go:969]  D:/go/src/runtime/asm_amd64.s:1374
+2020/11/09 10:55:40.775 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:55:40.776 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:55:40.776 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:55:40.785 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 10:55:40.786 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 10:55:40.936 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:55:40.937 [D] [value.go:475]  ==== 开始检查 ====
+2020/11/09 10:55:40.938 [C] [panic.go:969]  the request url is  /get/rolePermissions
+2020/11/09 10:55:40.941 [C] [panic.go:969]  Handler crashed with error can't find templatefile in the path:views/rolecontroller/queryrolepermissions.tpl
+2020/11/09 10:55:40.942 [C] [panic.go:969]  D:/go/src/runtime/panic.go:969
+2020/11/09 10:55:40.942 [C] [panic.go:969]  D:/GoWorks/src/github.com/astaxie/beego/template.go:75
+2020/11/09 10:55:40.943 [C] [panic.go:969]  D:/GoWorks/src/github.com/astaxie/beego/controller.go:306
+2020/11/09 10:55:40.943 [C] [panic.go:969]  D:/GoWorks/src/github.com/astaxie/beego/controller.go:257
+2020/11/09 10:55:40.944 [C] [panic.go:969]  D:/GoWorks/src/github.com/astaxie/beego/controller.go:237
+2020/11/09 10:55:40.945 [C] [panic.go:969]  D:/GoWorks/src/github.com/astaxie/beego/router.go:909
+2020/11/09 10:55:40.945 [C] [panic.go:969]  D:/go/src/net/http/server.go:2843
+2020/11/09 10:55:40.945 [C] [panic.go:969]  D:/go/src/net/http/server.go:1925
+2020/11/09 10:55:40.946 [C] [panic.go:969]  D:/go/src/runtime/asm_amd64.s:1374
+2020/11/09 10:56:24.110 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:56:24.110 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:56:24.111 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:56:24.120 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 10:56:24.121 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 10:56:24.125 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:56:24.126 [D] [value.go:475]  ==== 开始检查 ====
+2020/11/09 10:56:24.126 [C] [panic.go:969]  the request url is  /get/rolePermissions
+2020/11/09 10:56:24.127 [C] [panic.go:969]  Handler crashed with error can't find templatefile in the path:views/rolecontroller/queryrolepermissions.tpl
+2020/11/09 10:56:24.135 [C] [panic.go:969]  D:/go/src/runtime/panic.go:969
+2020/11/09 10:56:24.136 [C] [panic.go:969]  D:/GoWorks/src/github.com/astaxie/beego/template.go:75
+2020/11/09 10:56:24.136 [C] [panic.go:969]  D:/GoWorks/src/github.com/astaxie/beego/controller.go:306
+2020/11/09 10:56:24.137 [C] [panic.go:969]  D:/GoWorks/src/github.com/astaxie/beego/controller.go:257
+2020/11/09 10:56:24.137 [C] [panic.go:969]  D:/GoWorks/src/github.com/astaxie/beego/controller.go:237
+2020/11/09 10:56:24.138 [C] [panic.go:969]  D:/GoWorks/src/github.com/astaxie/beego/router.go:909
+2020/11/09 10:56:24.138 [C] [panic.go:969]  D:/go/src/net/http/server.go:2843
+2020/11/09 10:56:24.138 [C] [panic.go:969]  D:/go/src/net/http/server.go:1925
+2020/11/09 10:56:24.139 [C] [panic.go:969]  D:/go/src/runtime/asm_amd64.s:1374
+2020/11/09 10:57:17.030 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:57:17.031 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:57:17.031 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:57:17.032 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 10:57:17.045 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 10:57:17.202 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:57:17.203 [D] [value.go:475]  ==== 开始检查 ====
+2020/11/09 10:57:17.204 [C] [panic.go:969]  the request url is  /get/rolePermissions
+2020/11/09 10:57:17.213 [C] [panic.go:969]  Handler crashed with error can't find templatefile in the path:views/rolecontroller/queryrolepermissions.tpl
+2020/11/09 10:57:17.214 [C] [panic.go:969]  D:/go/src/runtime/panic.go:969
+2020/11/09 10:57:17.215 [C] [panic.go:969]  D:/GoWorks/src/github.com/astaxie/beego/template.go:75
+2020/11/09 10:57:17.216 [C] [panic.go:969]  D:/GoWorks/src/github.com/astaxie/beego/controller.go:306
+2020/11/09 10:57:17.218 [C] [panic.go:969]  D:/GoWorks/src/github.com/astaxie/beego/controller.go:257
+2020/11/09 10:57:17.218 [C] [panic.go:969]  D:/GoWorks/src/github.com/astaxie/beego/controller.go:237
+2020/11/09 10:57:17.218 [C] [panic.go:969]  D:/GoWorks/src/github.com/astaxie/beego/router.go:909
+2020/11/09 10:57:17.219 [C] [panic.go:969]  D:/go/src/net/http/server.go:2843
+2020/11/09 10:57:17.219 [C] [panic.go:969]  D:/go/src/net/http/server.go:1925
+2020/11/09 10:57:17.219 [C] [panic.go:969]  D:/go/src/runtime/asm_amd64.s:1374
+2020/11/09 10:57:59.342 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:57:59.342 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:57:59.343 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:57:59.351 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 10:57:59.351 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 10:57:59.508 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:57:59.509 [D] [role.go:183]  ---- 开始获取数据库连接 ----
+2020/11/09 10:57:59.510 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 10:57:59.512 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 10:57:59.518 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:57:59.523 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:57:59.524 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:57:59.526 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:57:59.526 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 10:57:59.526 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 10:57:59.571 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   229.3574ms|   match|[44m GET     [0m /get/rolePermissions   r:/get/rolePermissions
+2020/11/09 10:59:25.034 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:59:25.034 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:59:25.035 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:59:25.036 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:59:25.036 [D] [role.go:204]  ---- 开始获取数据库连接 ----
+2020/11/09 10:59:25.037 [C] [panic.go:969]  the request url is  /update/rolePermissions
+2020/11/09 10:59:25.037 [C] [panic.go:969]  Handler crashed with error interface conversion: interface {} is nil, not float64
+2020/11/09 10:59:25.038 [C] [panic.go:969]  D:/go/src/runtime/panic.go:969
+2020/11/09 10:59:25.038 [C] [panic.go:969]  D:/go/src/runtime/iface.go:261
+2020/11/09 10:59:25.039 [C] [panic.go:969]  D:/GoWorks/FamilyDiary/Source/models/role.go:210
+2020/11/09 10:59:25.039 [C] [panic.go:969]  D:/GoWorks/FamilyDiary/Source/controllers/role.go:187
+2020/11/09 10:59:25.039 [C] [panic.go:969]  D:/go/src/reflect/value.go:475
+2020/11/09 10:59:25.039 [C] [panic.go:969]  D:/go/src/reflect/value.go:336
+2020/11/09 10:59:25.040 [C] [panic.go:969]  D:/GoWorks/src/github.com/astaxie/beego/router.go:897
+2020/11/09 10:59:25.040 [C] [panic.go:969]  D:/go/src/net/http/server.go:2843
+2020/11/09 10:59:25.040 [C] [panic.go:969]  D:/go/src/net/http/server.go:1925
+2020/11/09 10:59:25.041 [C] [panic.go:969]  D:/go/src/runtime/asm_amd64.s:1374
+2020/11/09 10:59:43.571 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:59:43.571 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:59:43.572 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:59:43.583 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:59:43.584 [D] [role.go:204]  ---- 开始获取数据库连接 ----
+2020/11/09 10:59:43.673 [E] [role.go:187]  ---- insert role permission failed,err:sql: expected 7 arguments, got 1
+2020/11/09 10:59:43.674 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 10:59:43.675 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 10:59:43.681 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 10:59:43.683 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 10:59:43.684 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 10:59:43.684 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 10:59:43.724 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   153.5776ms|   match|[46m POST    [0m /update/rolePermissions   r:/update/rolePermissions
+2020/11/09 11:00:13.583 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:13.584 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:13.584 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:13.598 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:13.599 [D] [role.go:160]  ---- 开始获取数据库连接 ----
+2020/11/09 11:00:13.599 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:13.600 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:13.600 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:13.602 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:13.603 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:13.603 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:13.603 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:13.605 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:13.645 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:13.645 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:13.645 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:13.647 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:13.647 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:13.648 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:13.648 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:13.649 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:13.693 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:13.693 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:13.694 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:13.695 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:13.696 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:13.696 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:13.696 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:13.697 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:13.737 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:13.737 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:13.738 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:13.739 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:13.740 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:13.740 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:13.740 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:13.741 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:13.787 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:13.788 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:13.788 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:13.790 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:13.790 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:13.790 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:13.791 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:13.792 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:13.829 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:13.829 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:13.829 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:13.831 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:13.831 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:13.832 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:13.832 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:13.833 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:13.879 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:13.879 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:13.880 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:13.881 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:13.882 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:13.883 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:13.883 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:13.885 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:13.936 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:13.937 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:13.938 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:13.939 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:13.939 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:13.939 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:13.940 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:13.940 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:14.006 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:14.007 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:14.008 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:14.009 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:14.012 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:14.013 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:14.014 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:14.015 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:14.155 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:14.155 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:14.156 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:14.161 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:14.168 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:14.169 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:14.169 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:14.171 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:14.271 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:14.272 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:14.273 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:14.274 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:14.274 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:14.275 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:14.275 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:14.276 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:14.321 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:14.322 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:14.323 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:14.325 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:14.326 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:14.326 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:14.335 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:14.337 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:14.402 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:14.402 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:14.403 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:14.405 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:14.405 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:14.406 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:14.406 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:14.407 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:14.454 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:14.455 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:14.455 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:14.456 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:14.457 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:14.458 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:14.458 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:14.460 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:14.495 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:14.496 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:14.497 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:14.499 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:14.499 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:14.500 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:14.500 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:14.502 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:14.551 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:14.568 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:14.569 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:14.570 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:14.571 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:14.571 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:14.571 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:14.573 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:14.629 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:14.629 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:14.630 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:14.631 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:14.632 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:14.632 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:14.633 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:14.634 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:14.671 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:14.671 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:14.671 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:14.672 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:14.673 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:14.673 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:14.673 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:14.674 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:14.720 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:14.720 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:14.721 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:14.722 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:14.723 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:14.723 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:14.723 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:14.724 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:14.762 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:00:14.762 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:00:14.763 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:00:14.764 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:00:14.765 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 11:00:14.765 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 11:00:14.820 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|     1.23662s|   match|[46m POST    [0m /allocate/rolePermissions   r:/allocate/rolePermissions
+2020/11/09 11:01:46.744 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:46.746 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:46.750 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:46.750 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 11:01:46.751 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 11:01:46.917 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:46.918 [D] [role.go:204]  ---- 开始获取数据库连接 ----
+2020/11/09 11:01:46.918 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 11:01:46.927 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 11:01:47.004 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.004 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.005 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.008 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.009 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.009 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.010 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.010 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.065 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.066 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.066 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.074 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.075 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.076 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.076 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.077 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.158 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.160 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.168 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.169 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.171 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.172 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.173 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.174 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.248 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.249 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.250 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.252 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.253 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.253 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.254 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.254 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.306 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.308 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.308 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.309 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.309 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.309 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.310 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.310 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.357 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.357 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.357 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.358 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.358 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.360 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.360 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.360 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.422 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.423 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.424 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.425 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.425 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.425 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.425 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.426 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.473 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.474 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.474 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.475 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.476 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.476 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.476 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.477 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.515 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.516 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.516 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.518 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.519 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.519 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.520 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.521 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.573 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.574 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.574 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.575 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.575 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.575 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.576 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.576 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.615 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.616 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.616 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.618 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.618 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.619 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.619 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.620 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.665 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.666 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.666 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.668 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.669 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.669 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.670 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.671 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.707 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.707 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.708 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.709 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.709 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.709 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.710 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.710 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.756 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.757 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.757 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.758 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.758 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.759 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.759 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.760 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.804 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.804 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.805 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.806 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.806 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.807 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.807 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.808 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.848 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.849 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.849 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.850 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.851 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.851 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.851 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.852 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.896 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.897 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.897 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.898 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.899 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.907 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.908 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.909 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.948 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.948 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.949 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.950 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:47.951 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:47.952 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:47.952 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:47.953 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:48.047 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:48.048 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:48.048 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:48.051 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:48.059 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:48.060 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:48.060 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:48.063 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:48.123 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:48.124 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:48.125 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:48.126 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:48.127 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:48.129 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:48.129 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:48.130 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:48.229 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:48.230 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:48.231 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:48.235 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:48.237 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:48.237 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:48.239 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:48.240 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:48.274 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:48.274 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:48.275 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:48.277 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:48.277 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:48.279 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:48.279 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:48.280 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:48.323 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:48.324 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:48.324 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:48.326 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:48.330 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:48.331 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:48.333 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:48.339 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:48.373 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:48.374 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:48.374 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:48.376 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:48.376 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:48.378 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:48.378 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:48.379 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:48.423 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:48.424 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:48.424 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:48.426 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:48.431 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:48.432 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:48.440 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:48.441 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:48.473 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:01:48.474 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:01:48.474 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:01:48.476 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:01:48.476 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 11:01:48.477 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 11:01:48.582 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   1.8390966s|   match|[46m POST    [0m /update/rolePermissions   r:/update/rolePermissions
+2020/11/09 11:05:08.734 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:05:08.734 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:05:08.735 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:05:08.740 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 11:05:08.740 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 11:05:08.924 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:05:08.925 [D] [role.go:204]  ---- 开始获取数据库连接 ----
+2020/11/09 11:05:08.926 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 11:05:08.929 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 11:05:08.954 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:05:08.955 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:05:08.956 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:05:08.957 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:05:08.966 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:05:08.967 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:05:08.968 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:05:08.969 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:05:08.973 [E] [role.go:187]  ---- insert role permission failed,err:Error 1136: Column count doesn't match value count at row 1
+2020/11/09 11:05:09.031 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:05:09.032 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:05:09.032 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:05:09.034 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:05:09.036 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 11:05:09.037 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 11:05:09.092 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   359.0516ms|   match|[46m POST    [0m /update/rolePermissions   r:/update/rolePermissions
+2020/11/09 11:05:48.149 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:05:48.150 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:05:48.156 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:05:48.157 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 11:05:48.157 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 11:05:48.516 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:05:48.516 [D] [role.go:204]  ---- 开始获取数据库连接 ----
+2020/11/09 11:05:48.517 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 11:05:48.524 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 11:05:48.532 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:05:48.535 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:05:48.536 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:05:48.539 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:05:48.540 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:05:48.541 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:05:48.541 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:05:48.543 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:05:48.552 [E] [role.go:187]  ---- insert role permission failed,err:Error 1136: Column count doesn't match value count at row 1
+2020/11/09 11:05:48.554 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:05:48.555 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:05:48.556 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:05:48.557 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:05:48.559 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 11:05:48.559 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 11:05:48.561 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   412.8987ms|   match|[46m POST    [0m /update/rolePermissions   r:/update/rolePermissions
+2020/11/09 11:06:16.868 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:16.869 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:16.869 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:16.870 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 11:06:16.878 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 11:06:17.048 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:17.049 [D] [role.go:204]  ---- 开始获取数据库连接 ----
+2020/11/09 11:06:17.050 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 11:06:17.055 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 11:06:17.165 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:17.166 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:17.167 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:17.173 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:17.174 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:17.177 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:17.178 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:17.179 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:17.181 [E] [role.go:187]  ---- insert role permission failed,err:Error 1136: Column count doesn't match value count at row 1
+2020/11/09 11:06:17.182 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:17.182 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:17.183 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:17.184 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:17.186 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 11:06:17.186 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 11:06:17.261 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   392.9488ms|   match|[46m POST    [0m /update/rolePermissions   r:/update/rolePermissions
+2020/11/09 11:06:29.117 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.118 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.118 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.119 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.127 [D] [role.go:160]  ---- 开始获取数据库连接 ----
+2020/11/09 11:06:29.128 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.130 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.131 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.133 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.133 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.140 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.141 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.143 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.188 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.189 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.189 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.191 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.191 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.192 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.193 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.194 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.238 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.239 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.240 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.245 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.245 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.246 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.247 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.248 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.288 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.289 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.289 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.290 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.292 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.296 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.297 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.299 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.347 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.348 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.349 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.353 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.355 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.355 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.357 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.358 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.404 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.405 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.405 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.406 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.407 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.411 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.412 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.415 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.454 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.455 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.456 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.461 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.462 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.463 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.463 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.466 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.505 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.506 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.506 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.508 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.512 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.512 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.514 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.515 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.555 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.556 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.556 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.561 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.562 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.563 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.563 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.564 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.613 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.614 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.615 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.619 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.621 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.622 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.624 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.625 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.664 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.666 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.668 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.677 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.680 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.682 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.682 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.685 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.721 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.722 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.722 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.723 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.724 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.728 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.729 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.730 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.771 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.772 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.773 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.776 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.777 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.778 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.778 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.779 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.822 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.823 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.823 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.824 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.826 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.826 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.827 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.827 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.872 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.872 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.873 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.874 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.875 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.875 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.875 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.876 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.929 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.930 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.931 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.931 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.931 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.933 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.934 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.939 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.980 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.981 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.982 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.986 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:29.988 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:29.989 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:29.990 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:29.991 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:30.037 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:30.038 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:30.038 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:30.044 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:30.045 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:30.045 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:30.047 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:30.048 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:30.089 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:30.089 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:30.090 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:30.091 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:30.092 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:30.096 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:30.096 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:30.099 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:30.137 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 11:06:30.138 [D] [cache.go:25]  ---- 开始获取redis连接 ----
+2020/11/09 11:06:30.139 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 11:06:30.142 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 11:06:30.143 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 11:06:30.144 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 11:06:30.188 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   1.0712113s|   match|[46m POST    [0m /allocate/rolePermissions   r:/allocate/rolePermissions
+2020/11/09 12:34:09.953 [C] [asm_amd64.s:1374]  ListenAndServe:  net.Listen error: listen tcp 127.0.0.1:8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted. 28112
+2020/11/09 12:34:37.068 [D] [login.go:88]  login username:admin,password:admin
+2020/11/09 12:34:37.068 [D] [login.go:93]  ---- user login cache redis key1:login_admin_username
+2020/11/09 12:34:37.068 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 12:34:37.069 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 12:34:37.070 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 12:34:37.079 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 12:34:37.080 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 12:34:37.085 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 12:34:37.086 [D] [login.go:13]  ---- 开始获取数据库连接 ----
+2020/11/09 12:34:37.086 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 12:34:37.087 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 12:34:37.111 [D] [login.go:69]  query sql:select password from fd_user where username = ? and status = 0,query result:{"Id":0,"Username":"","Password":"21232f297a57a5a743894a0e4a801fc3","Head":"","Gender":"","Remark":"","CreateUser":"","UpdateUser":"","Status":"","CreateTime":"0001-01-01T00:00:00Z","UpdateTime":"0001-01-01T00:00:00Z"}
+2020/11/09 12:34:37.113 [D] [cache.go:15]  ---- set redis starting ----
+2020/11/09 12:34:37.120 [D] [cache.go:57]  ---- 开始获取redis连接 ----
+2020/11/09 12:34:37.120 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 12:34:37.121 [D] [cache.go:15]  ---- get redis val:admin ----
+2020/11/09 12:34:37.124 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 12:34:37.125 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 12:34:37.129 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 12:34:37.174 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 12:34:37.175 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 12:34:37.175 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 12:34:37.236 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   167.5859ms|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 12:35:03.645 [D] [login.go:88]  login username:admin,password:admin
+2020/11/09 12:35:03.646 [D] [login.go:93]  ---- user login cache redis key1:login_admin_username
+2020/11/09 12:35:03.646 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 12:35:03.649 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 12:35:03.655 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 12:35:03.655 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 12:35:03.658 [D] [login.go:13]  ---- 开始获取数据库连接 ----
+2020/11/09 12:35:03.662 [D] [login.go:69]  query sql:select password from fd_user where username = ? and status = 0,query result:{"Id":0,"Username":"","Password":"21232f297a57a5a743894a0e4a801fc3","Head":"","Gender":"","Remark":"","CreateUser":"","UpdateUser":"","Status":"","CreateTime":"0001-01-01T00:00:00Z","UpdateTime":"0001-01-01T00:00:00Z"}
+2020/11/09 12:35:03.663 [D] [cache.go:15]  ---- set redis starting ----
+2020/11/09 12:35:03.664 [D] [cache.go:57]  ---- 开始获取redis连接 ----
+2020/11/09 12:35:03.664 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 12:35:03.664 [D] [cache.go:15]  ---- get redis val:admin ----
+2020/11/09 12:35:03.668 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 12:35:03.669 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 12:35:03.671 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 12:35:03.675 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 12:35:03.676 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 12:35:03.677 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 12:35:03.763 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   117.6866ms|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 14:04:38.170 [D] [login.go:88]  login username:admin,password:admin
+2020/11/09 14:04:38.170 [D] [login.go:93]  ---- user login cache redis key1:login_admin_username
+2020/11/09 14:04:38.170 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 14:04:38.171 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 14:04:38.179 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 14:04:38.180 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 14:04:38.180 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 14:04:38.347 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 14:04:38.348 [D] [login.go:13]  ---- 开始获取数据库连接 ----
+2020/11/09 14:04:38.348 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 14:04:38.355 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 14:04:38.373 [D] [login.go:69]  query sql:select password from fd_user where username = ? and status = 0,query result:{"Id":0,"Username":"","Password":"21232f297a57a5a743894a0e4a801fc3","Head":"","Gender":"","Remark":"","CreateUser":"","UpdateUser":"","Status":"","CreateTime":"0001-01-01T00:00:00Z","UpdateTime":"0001-01-01T00:00:00Z"}
+2020/11/09 14:04:38.373 [D] [cache.go:15]  ---- set redis starting ----
+2020/11/09 14:04:38.374 [D] [cache.go:57]  ---- 开始获取redis连接 ----
+2020/11/09 14:04:38.374 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 14:04:38.387 [D] [cache.go:15]  ---- get redis val:admin ----
+2020/11/09 14:04:38.389 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 14:04:38.390 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 14:04:38.391 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 14:04:38.398 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 14:04:38.399 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 14:04:38.401 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 14:04:38.455 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   286.2341ms|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 14:04:40.893 [D] [cache.go:25]  ---- expire redis starting ----
+2020/11/09 14:04:40.893 [D] [cache.go:103]  ---- 开始获取redis连接 ----
+2020/11/09 14:04:40.894 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 14:04:40.895 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 14:04:40.906 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 14:04:40.906 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 14:04:40.908 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 14:04:40.917 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 14:04:40.918 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 14:04:40.964 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|    70.8416ms|   match|[46m POST    [0m /user/logout   r:/user/logout
+2020/11/09 14:04:46.264 [D] [login.go:88]  login username:admin,password:admin
+2020/11/09 14:04:46.274 [D] [login.go:93]  ---- user login cache redis key1:login_admin_username
+2020/11/09 14:04:46.275 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 14:04:46.275 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 14:04:46.278 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 14:04:46.280 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 14:04:46.283 [D] [login.go:13]  ---- 开始获取数据库连接 ----
+2020/11/09 14:04:46.285 [D] [login.go:69]  query sql:select password from fd_user where username = ? and status = 0,query result:{"Id":0,"Username":"","Password":"21232f297a57a5a743894a0e4a801fc3","Head":"","Gender":"","Remark":"","CreateUser":"","UpdateUser":"","Status":"","CreateTime":"0001-01-01T00:00:00Z","UpdateTime":"0001-01-01T00:00:00Z"}
+2020/11/09 14:04:46.296 [D] [cache.go:15]  ---- set redis starting ----
+2020/11/09 14:04:46.297 [D] [cache.go:57]  ---- 开始获取redis连接 ----
+2020/11/09 14:04:46.299 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 14:04:46.300 [D] [cache.go:15]  ---- get redis val:admin ----
+2020/11/09 14:04:46.302 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 14:04:46.302 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 14:04:46.303 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 14:04:46.304 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 14:04:46.314 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 14:04:46.314 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 14:04:46.357 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|     92.752ms|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 14:05:26.052 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 14:05:26.053 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 14:05:26.053 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 14:05:26.063 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 14:05:26.065 [D] [user.go:250]  ---- 开始获取数据库连接 ----
+2020/11/09 14:05:26.070 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 14:05:26.077 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 14:05:26.077 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 14:05:26.080 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 14:05:26.081 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 14:05:26.081 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 14:05:26.167 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   114.6942ms|   match|[44m GET     [0m /user/info   r:/user/info
+2020/11/09 14:10:02.254 [D] [cache.go:25]  ---- expire redis starting ----
+2020/11/09 14:10:02.255 [D] [cache.go:103]  ---- 开始获取redis连接 ----
+2020/11/09 14:10:02.257 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 14:10:02.259 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 14:10:02.259 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 14:10:02.260 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 14:10:02.261 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 14:10:02.262 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 14:10:02.267 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 14:10:02.344 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|    89.8363ms|   match|[46m POST    [0m /user/logout   r:/user/logout
+2020/11/09 14:10:05.211 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 14:10:05.211 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 14:10:05.212 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 14:10:05.214 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 14:10:05.215 [D] [user.go:250]  ---- 开始获取数据库连接 ----
+2020/11/09 14:10:05.217 [E] [user.go:204]  ---- get login user info failed,err:<QuerySeter> no row found
+2020/11/09 14:10:05.218 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 14:10:05.218 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 14:10:05.218 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 14:10:05.220 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 14:10:05.221 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 14:10:05.222 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 14:10:05.279 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|    68.8284ms|   match|[44m GET     [0m /user/info   r:/user/info
+2020/11/09 14:10:50.316 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 14:10:50.316 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 14:10:50.317 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 14:10:50.319 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 14:10:50.320 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 14:10:50.321 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 14:10:50.363 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   4.6933505s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 14:12:28.168 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 14:12:28.172 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 14:12:28.173 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 14:12:28.174 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 14:12:28.174 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 14:12:28.325 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 14:12:28.326 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 14:12:28.326 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 14:12:28.327 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 14:12:28.335 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 14:12:28.375 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   4.9076003s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 14:16:07.885 [D] [server.go:2843]  |      127.0.0.1|[43m 404 [0m|      789.4µs| nomatch|[44m GET     [0m /static/fonts/element-icons.535877f5.woff
+2020/11/09 14:16:07.892 [D] [server.go:2843]  |      127.0.0.1|[43m 404 [0m|      649.2µs| nomatch|[44m GET     [0m /static/fonts/element-icons.732389de.ttf
+2020/11/09 14:16:12.587 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 14:16:12.587 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 14:16:12.588 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 14:16:12.598 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 14:16:12.599 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 14:16:12.751 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 14:16:12.752 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 14:16:12.752 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 14:16:12.761 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 14:16:12.771 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 14:16:12.838 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   5.2396151s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 14:16:47.241 [D] [server.go:2843]  |      127.0.0.1|[43m 404 [0m|        998µs| nomatch|[46m POST    [0m /dev-api/user/login
+2020/11/09 14:21:55.202 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 14:21:55.202 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 14:21:55.203 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 14:21:55.203 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 14:21:55.217 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 14:21:55.218 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 14:21:55.261 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   5.0464304s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 14:26:01.784 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 14:26:01.785 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 14:26:01.786 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 14:26:01.800 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 14:26:01.801 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 14:26:01.802 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 14:26:01.848 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   4.7629445s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 14:27:50.791 [D] [login.go:88]  login username:admin,password:admin
+2020/11/09 14:27:50.792 [D] [login.go:93]  ---- user login cache redis key1:login_admin_username
+2020/11/09 14:27:50.792 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 14:27:50.793 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 14:27:50.806 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 14:27:50.807 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 14:27:50.808 [D] [login.go:13]  ---- 开始获取数据库连接 ----
+2020/11/09 14:27:50.811 [D] [login.go:69]  query sql:select password from fd_user where username = ? and status = 0,query result:{"Id":0,"Username":"","Password":"e10adc3949ba59abbe56e057f20f883e","Head":"","Gender":"","Remark":"","CreateUser":"","UpdateUser":"","Status":"","CreateTime":"0001-01-01T00:00:00Z","UpdateTime":"0001-01-01T00:00:00Z"}
+2020/11/09 14:27:50.812 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 14:27:50.813 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 14:27:50.821 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 14:27:50.822 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 14:27:50.823 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 14:27:50.824 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 14:27:50.865 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|    73.8032ms|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 14:58:39.245 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 14:58:39.246 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 14:58:39.246 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 14:58:39.248 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 14:58:39.257 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 14:58:39.258 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 14:58:39.304 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   4.7616579s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 15:02:57.512 [D] [server.go:2843]  |      127.0.0.1|[43m 405 [0m|           0s|   match|[44m GET     [0m /user/login   r:/user/login
+2020/11/09 15:03:03.215 [D] [server.go:2843]  |      127.0.0.1|[43m 405 [0m|           0s|   match|[44m GET     [0m /user/login   r:/user/login
+2020/11/09 15:03:33.347 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 15:03:33.347 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 15:03:33.348 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 15:03:33.359 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 15:03:33.360 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 15:03:33.361 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 15:03:33.416 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   5.0696376s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 15:03:59.156 [D] [login.go:88]  login username:admin,password:199701wcj
+2020/11/09 15:03:59.161 [D] [login.go:93]  ---- user login cache redis key1:login_admin_username
+2020/11/09 15:03:59.165 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 15:03:59.165 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 15:03:59.166 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 15:03:59.167 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 15:03:59.167 [D] [login.go:13]  ---- 开始获取数据库连接 ----
+2020/11/09 15:03:59.183 [D] [login.go:69]  query sql:select password from fd_user where username = ? and status = 0,query result:{"Id":0,"Username":"","Password":"e10adc3949ba59abbe56e057f20f883e","Head":"","Gender":"","Remark":"","CreateUser":"","UpdateUser":"","Status":"","CreateTime":"0001-01-01T00:00:00Z","UpdateTime":"0001-01-01T00:00:00Z"}
+2020/11/09 15:03:59.184 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 15:03:59.185 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 15:03:59.197 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 15:03:59.198 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 15:03:59.198 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 15:03:59.198 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 15:03:59.242 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|    91.7541ms|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 15:04:23.310 [D] [login.go:88]  login username:admin,password:199701wcj
+2020/11/09 15:04:23.311 [D] [login.go:93]  ---- user login cache redis key1:login_admin_username
+2020/11/09 15:04:23.312 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 15:04:23.321 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 15:04:23.322 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 15:04:23.323 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 15:04:23.324 [D] [login.go:13]  ---- 开始获取数据库连接 ----
+2020/11/09 15:04:23.326 [D] [login.go:69]  query sql:select password from fd_user where username = ? and status = 0,query result:{"Id":0,"Username":"","Password":"e10adc3949ba59abbe56e057f20f883e","Head":"","Gender":"","Remark":"","CreateUser":"","UpdateUser":"","Status":"","CreateTime":"0001-01-01T00:00:00Z","UpdateTime":"0001-01-01T00:00:00Z"}
+2020/11/09 15:04:23.327 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 15:04:23.337 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 15:04:23.338 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 15:04:23.339 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 15:04:23.340 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 15:04:23.340 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 15:04:23.385 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|    74.8011ms|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 15:05:21.009 [D] [login.go:88]  login username:admin,password:admin
+2020/11/09 15:05:21.010 [D] [login.go:93]  ---- user login cache redis key1:login_admin_username
+2020/11/09 15:05:21.017 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 15:05:21.018 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 15:05:21.018 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 15:05:21.019 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 15:05:21.020 [D] [login.go:13]  ---- 开始获取数据库连接 ----
+2020/11/09 15:05:21.022 [D] [login.go:69]  query sql:select password from fd_user where username = ? and status = 0,query result:{"Id":0,"Username":"","Password":"21232f297a57a5a743894a0e4a801fc3","Head":"","Gender":"","Remark":"","CreateUser":"","UpdateUser":"","Status":"","CreateTime":"0001-01-01T00:00:00Z","UpdateTime":"0001-01-01T00:00:00Z"}
+2020/11/09 15:05:21.023 [D] [cache.go:15]  ---- set redis starting ----
+2020/11/09 15:05:21.023 [D] [cache.go:57]  ---- 开始获取redis连接 ----
+2020/11/09 15:05:21.023 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 15:05:21.024 [D] [cache.go:15]  ---- get redis val:admin ----
+2020/11/09 15:05:21.025 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 15:05:21.025 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 15:05:21.026 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 15:05:21.027 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 15:05:21.027 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 15:05:21.027 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 15:05:21.074 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|    64.8551ms|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 15:06:01.943 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 15:06:01.943 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 15:06:01.944 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 15:06:01.955 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 15:06:01.955 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 15:06:01.956 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 15:06:02.015 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   5.0657545s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 15:07:50.975 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 15:07:50.977 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 15:07:50.983 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 15:07:51.004 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 15:07:51.009 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 15:07:51.011 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 15:07:51.082 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|  31.3518031s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 15:08:08.070 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 15:08:08.071 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 15:08:08.072 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 15:08:08.083 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 15:08:08.084 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 15:08:08.085 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 15:08:08.131 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   5.0673591s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 15:10:02.978 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 15:10:02.979 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 15:10:02.983 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 15:10:02.983 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 15:10:02.984 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 15:10:02.984 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 15:10:03.506 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 15:10:03.507 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 15:10:03.508 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 15:10:03.511 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 15:10:03.526 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 15:10:03.583 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   5.3037699s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 15:23:17.102 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 15:23:17.103 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 15:23:17.103 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 15:23:17.104 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 15:23:17.107 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 15:23:17.108 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 15:23:17.108 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 15:23:17.173 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   5.0748215s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 15:23:59.337 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 15:23:59.338 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 15:23:59.339 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 15:23:59.339 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 15:23:59.340 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 15:23:59.342 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 15:23:59.343 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 15:23:59.414 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   4.7762627s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 15:24:14.186 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 15:24:14.186 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 15:24:14.187 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 15:24:14.187 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 15:24:14.188 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 15:24:14.196 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 15:24:14.197 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 15:24:14.253 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   5.0687793s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 15:29:03.031 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 15:29:03.031 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 15:29:03.032 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 15:29:03.033 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 15:29:03.045 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 15:29:03.046 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 15:29:03.207 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 15:29:03.208 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 15:29:03.208 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 15:29:03.209 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 15:29:03.225 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 15:29:03.264 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   5.2231522s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 16:22:10.714 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 16:22:10.715 [D] [login.go:102]  login user:username(),password()
+2020/11/09 16:22:10.716 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 16:22:10.727 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 16:22:10.727 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 16:22:10.727 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 16:22:10.728 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 16:22:10.884 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 16:22:10.885 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 16:22:10.886 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 16:22:10.886 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 16:22:10.907 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 16:22:10.968 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   253.3208ms|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 16:23:34.179 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 16:23:34.180 [D] [login.go:102]  login user:username(admin),password(admin)
+2020/11/09 16:23:34.191 [D] [login.go:102]  login username:admin,password:admin
+2020/11/09 16:23:34.191 [D] [login.go:107]  ---- user login cache redis key1:login_admin_username
+2020/11/09 16:23:34.192 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 16:23:34.192 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 16:23:34.192 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 16:23:34.193 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 16:23:34.193 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 16:23:34.358 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 16:23:34.359 [D] [login.go:13]  ---- 开始获取数据库连接 ----
+2020/11/09 16:23:34.359 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 16:23:34.359 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 16:23:34.383 [D] [login.go:80]  query sql:select password from fd_user where username = ? and status = 0,query result:{"Id":0,"Username":"","Password":"21232f297a57a5a743894a0e4a801fc3","Head":"","Gender":"","Remark":"","CreateUser":"","UpdateUser":"","Status":"","CreateTime":"0001-01-01T00:00:00Z","UpdateTime":"0001-01-01T00:00:00Z"}
+2020/11/09 16:23:34.384 [D] [cache.go:15]  ---- set redis starting ----
+2020/11/09 16:23:34.395 [D] [cache.go:57]  ---- 开始获取redis连接 ----
+2020/11/09 16:23:34.395 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 16:23:34.396 [D] [cache.go:15]  ---- get redis val:admin ----
+2020/11/09 16:23:34.397 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 16:23:34.397 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 16:23:34.398 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 16:23:34.399 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 16:23:34.400 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 16:23:34.400 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 16:23:34.465 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   286.7451ms|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 16:24:18.120 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 16:24:18.121 [D] [login.go:102]  login user:username(),password()
+2020/11/09 16:24:18.122 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 16:24:18.122 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 16:24:18.123 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 16:24:18.125 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 16:24:18.126 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 16:24:18.126 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 16:24:18.199 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|    4.771773s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 16:25:42.596 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 16:25:42.598 [D] [login.go:102]  login user:username(),password()
+2020/11/09 16:25:42.598 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 16:25:42.598 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 16:25:42.599 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 16:25:42.599 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 16:25:42.599 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 16:25:42.770 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 16:25:42.770 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 16:25:42.771 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 16:25:42.771 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 16:25:42.788 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 16:25:42.840 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   4.9308304s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 16:27:51.367 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 16:27:51.368 [D] [login.go:102]  login user:username(admin),password(admin)
+2020/11/09 16:27:51.368 [D] [login.go:102]  login username:admin,password:admin
+2020/11/09 16:27:51.380 [D] [login.go:107]  ---- user login cache redis key1:login_admin_username
+2020/11/09 16:27:51.380 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 16:27:51.380 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 16:27:51.381 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 16:27:51.382 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 16:27:51.382 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 16:27:51.538 [D] [cache.go:10]  redis exec get failed,err:redigo: nil returned
+2020/11/09 16:27:51.539 [D] [login.go:13]  ---- 开始获取数据库连接 ----
+2020/11/09 16:27:51.539 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 16:27:51.548 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 16:27:51.565 [D] [login.go:80]  query sql:select password from fd_user where username = ? and status = 0,query result:{"Id":0,"Username":"","Password":"21232f297a57a5a743894a0e4a801fc3","Head":"","Gender":"","Remark":"","CreateUser":"","UpdateUser":"","Status":"","CreateTime":"0001-01-01T00:00:00Z","UpdateTime":"0001-01-01T00:00:00Z"}
+2020/11/09 16:27:51.569 [D] [cache.go:15]  ---- set redis starting ----
+2020/11/09 16:27:51.569 [D] [cache.go:57]  ---- 开始获取redis连接 ----
+2020/11/09 16:27:51.570 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 16:27:51.571 [D] [cache.go:15]  ---- get redis val:admin ----
+2020/11/09 16:27:51.572 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 16:27:51.572 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 16:27:51.572 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 16:27:51.573 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 16:27:51.574 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 16:27:51.574 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 16:27:51.615 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   247.3057ms|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 16:28:22.063 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 16:28:22.064 [D] [login.go:102]  login user:username(),password()
+2020/11/09 16:28:22.064 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 16:28:22.073 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 16:28:22.074 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 16:28:22.075 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 16:28:22.076 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 16:28:22.076 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 16:28:22.127 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   4.7618284s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 16:32:47.368 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 16:32:47.369 [D] [login.go:104]  {
+    "username":"admin",
+    "password":"admin"
+}
+2020/11/09 16:32:47.380 [D] [login.go:104]  login user:username(admin),password(admin)
+2020/11/09 16:32:47.381 [D] [login.go:104]  login username:admin,password:admin
+2020/11/09 16:32:47.382 [D] [login.go:109]  ---- user login cache redis key1:login_admin_username
+2020/11/09 16:32:47.383 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 16:32:47.384 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 16:32:47.385 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 16:32:47.385 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 16:32:47.385 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 16:32:47.390 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 16:32:47.390 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 16:32:47.391 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 16:32:47.391 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 16:32:47.402 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 16:32:47.403 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 16:32:47.404 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 16:32:47.404 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 16:32:47.411 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 16:32:47.453 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|    85.7963ms|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 16:33:10.723 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 16:33:10.723 [D] [login.go:104]  
+2020/11/09 16:33:10.724 [D] [login.go:104]  login user:username(),password()
+2020/11/09 16:33:10.724 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 16:33:10.724 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 16:33:10.738 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 16:33:10.740 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 16:33:10.741 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 16:33:10.742 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 16:33:10.788 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   4.7668911s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 16:35:45.968 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 16:35:45.968 [D] [login.go:104]  
+2020/11/09 16:35:45.969 [D] [login.go:104]  login user:username(),password()
+2020/11/09 16:35:45.979 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 16:35:45.980 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 16:35:45.980 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 16:35:45.982 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 16:35:45.983 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 16:35:45.984 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 16:35:46.023 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   4.7546342s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 16:36:37.334 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 16:36:37.335 [D] [login.go:104]  
+2020/11/09 16:36:37.335 [D] [login.go:104]  login user:username(),password()
+2020/11/09 16:36:37.346 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 16:36:37.346 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 16:36:37.346 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 16:36:37.349 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 16:36:37.350 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 16:36:37.350 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 16:36:37.392 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   5.0464851s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 16:37:23.335 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 16:37:23.336 [D] [login.go:104]  
+2020/11/09 16:37:23.336 [D] [login.go:104]  login user:username(),password()
+2020/11/09 16:37:23.347 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 16:37:23.347 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 16:37:23.348 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 16:37:23.349 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 16:37:23.349 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 16:37:23.506 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 16:37:23.507 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 16:37:23.508 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 16:37:23.520 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 16:37:23.567 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 16:37:23.626 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   4.9890032s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 16:44:34.544 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 16:44:34.544 [D] [login.go:103]  
+2020/11/09 16:44:34.545 [D] [login.go:103]  login user:username(),password()
+2020/11/09 16:44:34.545 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 16:44:34.554 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 16:44:34.555 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 16:44:34.556 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 16:44:34.556 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 16:44:34.712 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 16:44:34.713 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 16:44:34.714 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 16:44:34.717 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 16:44:34.727 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 16:44:34.785 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   4.9340135s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 16:45:41.573 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 16:45:41.574 [D] [login.go:103]  
+2020/11/09 16:45:41.575 [D] [login.go:103]  login user:username(),password()
+2020/11/09 16:45:41.578 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 16:45:41.578 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 16:45:41.579 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 16:45:41.579 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 16:45:41.580 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 16:45:41.729 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 16:45:41.731 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 16:45:41.731 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 16:45:41.734 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 16:45:41.743 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 16:45:41.786 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   4.9102224s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 16:48:53.551 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 16:48:53.551 [D] [login.go:104]  
+2020/11/09 16:48:53.552 [D] [login.go:104]  login user:username(),password()
+2020/11/09 16:48:53.565 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 16:48:53.565 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 16:48:53.566 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 16:48:53.566 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 16:48:53.567 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 16:48:53.570 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 16:48:53.570 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 16:48:53.570 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 16:48:53.571 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 16:48:53.584 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 16:48:53.625 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   4.7687144s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 16:56:28.526 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 16:56:28.527 [D] [login.go:107]  
+2020/11/09 16:56:28.528 [D] [login.go:107]  
+2020/11/09 16:56:28.532 [D] [login.go:107]  &{POST /user/login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[39] Content-Type:[application/json;charset=UTF-8] Origin:[http://localhost:8081] Referer:[http://localhost:8081/] Sec-Fetch-Dest:[empty] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36] X-Forwarded-For:[127.0.0.1] X-Forwarded-Host:[localhost:8081] X-Forwarded-Port:[8081] X-Forwarded-Proto:[http]] 0xc00002cc80 <nil> 39 [] true 127.0.0.1:8080 map[] map[] <nil> map[] 127.0.0.1:58270 /user/login <nil> <nil> <nil> 0xc00002cc00}
+2020/11/09 16:56:28.533 [D] [login.go:107]  0x1494560
+2020/11/09 16:56:28.534 [D] [login.go:107]  login user:username(),password()
+2020/11/09 16:56:28.535 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 16:56:28.535 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 16:56:28.535 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 16:56:28.535 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 16:56:28.536 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 16:56:28.691 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 16:56:28.692 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 16:56:28.692 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 16:56:28.700 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 16:56:28.707 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 16:56:28.742 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|    4.896973s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 16:59:54.260 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 16:59:54.261 [D] [login.go:107]  
+2020/11/09 16:59:54.261 [D] [login.go:107]  
+2020/11/09 16:59:54.275 [D] [login.go:107]  map[]
+2020/11/09 16:59:54.276 [D] [login.go:107]  0x1114580
+2020/11/09 16:59:54.277 [D] [login.go:107]  login user:username(),password()
+2020/11/09 16:59:54.278 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 16:59:54.278 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 16:59:54.278 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 16:59:54.279 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 16:59:54.279 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 16:59:54.432 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 16:59:54.433 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 16:59:54.433 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 16:59:54.433 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 16:59:54.450 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 16:59:54.497 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   4.9385927s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 17:06:39.445 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 17:06:39.446 [D] [login.go:106]  
+2020/11/09 17:06:39.446 [D] [login.go:106]  
+2020/11/09 17:06:39.462 [D] [login.go:106]  0xce4540
+2020/11/09 17:06:39.463 [D] [login.go:106]  login user:username(),password()
+2020/11/09 17:06:39.463 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 17:06:39.463 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 17:06:39.464 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 17:06:39.464 [D] [storage.go:51]  ---- 开始获取配置文件信息redis信息 ----
+2020/11/09 17:06:39.465 [D] [storage.go:51]  ---- host:192.168.189.128,port:6379,pwd:redis@wcj,maxIdle:10,maxActive:100 ----
+2020/11/09 17:06:39.468 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 17:06:39.477 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 17:06:39.477 [D] [storage.go:123]  ---- 开始获取配置文件中DB信息 ----
+2020/11/09 17:06:39.477 [D] [storage.go:123]  user:root,password:520wcj,dbname:family_diary,maxIdle:10,maxConn:30
+2020/11/09 17:06:39.495 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 17:06:39.562 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   5.1225495s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 17:10:53.404 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 17:10:53.406 [D] [login.go:106]  
+2020/11/09 17:10:53.407 [D] [login.go:106]  
+2020/11/09 17:10:53.407 [D] [login.go:106]  0xce4540
+2020/11/09 17:10:53.408 [D] [login.go:106]  login user:username(),password()
+2020/11/09 17:10:53.408 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 17:10:53.409 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 17:10:53.409 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 17:10:53.410 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 17:10:53.410 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 17:10:53.410 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 17:10:53.461 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   4.7638111s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 17:12:40.752 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 17:12:40.753 [D] [login.go:106]  
+2020/11/09 17:12:40.754 [D] [login.go:106]  
+2020/11/09 17:12:40.754 [D] [login.go:106]  0xce4540
+2020/11/09 17:12:40.754 [D] [login.go:106]  login user:username(),password()
+2020/11/09 17:12:40.755 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 17:12:40.755 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 17:12:40.755 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 17:12:40.756 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 17:12:40.756 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 17:12:40.756 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 17:12:40.810 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|   4.7571519s|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 17:13:23.005 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 17:13:23.005 [D] [login.go:106]  {"username":"admin","password":"admin"}
+2020/11/09 17:13:23.006 [D] [login.go:106]  
+2020/11/09 17:13:23.006 [D] [login.go:106]  0xce4540
+2020/11/09 17:13:23.007 [D] [login.go:106]  login user:username(admin),password(admin)
+2020/11/09 17:13:23.007 [D] [login.go:106]  login username:admin,password:admin
+2020/11/09 17:13:23.008 [D] [login.go:111]  ---- user login cache redis key1:login_admin_username
+2020/11/09 17:13:23.008 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 17:13:23.009 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 17:13:23.010 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 17:13:23.011 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 17:13:23.012 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 17:13:23.013 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 17:13:23.013 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 17:13:23.014 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 17:13:23.014 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 17:13:23.015 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 17:13:23.052 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|    46.8749ms|   match|[46m POST    [0m /user/login   r:/user/login
+2020/11/09 17:13:30.245 [D] [router.go:879]  ----- 进入controller -----
+2020/11/09 17:13:30.245 [D] [login.go:106]  {"username":"admin","password":"admin"}
+2020/11/09 17:13:30.245 [D] [login.go:106]  
+2020/11/09 17:13:30.246 [D] [login.go:106]  0xce4540
+2020/11/09 17:13:30.246 [D] [login.go:106]  login user:username(admin),password(admin)
+2020/11/09 17:13:30.247 [D] [login.go:106]  login username:admin,password:admin
+2020/11/09 17:13:30.247 [D] [login.go:111]  ---- user login cache redis key1:login_admin_username
+2020/11/09 17:13:30.257 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 17:13:30.258 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 17:13:30.258 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 17:13:30.260 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 17:13:30.261 [D] [cache.go:10]  ---- get redis starting ----
+2020/11/09 17:13:30.262 [D] [cache.go:30]  ---- 开始获取redis连接 ----
+2020/11/09 17:13:30.262 [D] [storage.go:35]  ---- 开始获取redis连接池 ----
+2020/11/09 17:13:30.264 [D] [cache.go:10]  ---- get redis val:admin ----
+2020/11/09 17:13:30.265 [D] [log.go:27]  ---- 开始获取数据库连接 ----
+2020/11/09 17:13:30.266 [D] [base.go:62]  insert into fd_syslog(ip,type,method,fail,operate_time,function_name,operate_user,description) values(?,?,?,?,?,?,?,?)
+2020/11/09 17:13:30.322 [D] [server.go:2843]  |      127.0.0.1|[42m 200 [0m|    76.7938ms|   match|[46m POST    [0m /user/login   r:/user/login

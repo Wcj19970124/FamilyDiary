@@ -22,6 +22,8 @@ const (
 	RoleQueryErr               = 30004 //角色查询失败
 	RoleAlreadyExists          = 30006 //角色已存在
 	RoleAllocatePermissionsErr = 30007 //角色分配权限
+	RoleQueryPermissionErr     = 30008 //角色权限查询失败
+	RoleUpdatePermissionErr    = 30009 //角色权限更新失败
 )
 
 //登录态和权限验证
@@ -151,5 +153,43 @@ func (r *RoleController) AllocatePermissions() {
 		}
 		r.Report(r.Ctx.Input.IP(), "1", "POST", "0", "AllocatePermissions", models.GetLoginAdminUserName(), "分配权限成功", time.Now())
 		r.OutPut(200, "分配权限成功!")
+	}
+}
+
+//QueryRolePermissions 角色权限查看
+func (r *RoleController) QueryRolePermissions() {
+	//TODD：基础校验
+	if ok := r.verificate(); !ok {
+		return
+	}
+	//TODD：查询
+	if id, err := r.GetInt("id"); err == nil {
+		data, err := models.QueryRolePermissions(id)
+		if err != nil {
+			r.Report(r.Ctx.Input.IP(), "1", "GET", "1", "QueryRolePermissions", models.GetLoginAdminUserName(), "角色权限查询失败", time.Now())
+			r.OutPut(RoleQueryPermissionErr, "角色权限查询失败!")
+			return
+		}
+		r.Report(r.Ctx.Input.IP(), "1", "GET", "0", "QueryRolePermissions", models.GetLoginAdminUserName(), "角色权限查询成功", time.Now())
+		r.OutPutList(200, "角色权限查询成功!", data)
+	}
+}
+
+//UpdateRolePermissions 更新角色权限
+func (r *RoleController) UpdateRolePermissions() {
+	//TODD：基础校验
+	if ok := r.verificate(); !ok {
+		return
+	}
+	//TODD：更新
+	var param map[string]interface{}
+	if json.Unmarshal(r.Ctx.Input.RequestBody, &param) == nil {
+		if err := models.UpdateRolePermissions(param); err != nil {
+			r.Report(r.Ctx.Input.IP(), "1", "POST", "1", "UpdateRolePermissions", models.GetLoginAdminUserName(), "角色权限更新失败", time.Now())
+			r.OutPut(RoleUpdatePermissionErr, "角色权限更新失败!")
+			return
+		}
+		r.Report(r.Ctx.Input.IP(), "1", "POST", "0", "UpdateRolePermissions", models.GetLoginAdminUserName(), "角色权限更新成功", time.Now())
+		r.OutPut(200, "角色权限更新成功!")
 	}
 }

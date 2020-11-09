@@ -175,3 +175,58 @@ func AllocatePermissions(param map[string]interface{}) error {
 
 	return nil
 }
+
+//QueryRolePermissions 根据角色id查询权限信息
+func QueryRolePermissions(id int) (map[string]interface{}, error) {
+
+	sql := "select id,permission_name,parent_id,type,url from fd_permission where id in(select permission_id from fd_role_permission where role_id = ?)"
+	dbProxy, err := store.GetDBProxy()
+	if err != nil {
+		logs.Error("---- get db proxy failed,err:" + err.Error() + " ----")
+		return nil, err
+	}
+
+	var permissions []*Permission
+	_, err = dbProxy.Raw(sql, id).QueryRows(&permissions)
+	if err != nil {
+		logs.Error("---- get role permissions failed,err:" + err.Error())
+		return nil, err
+	}
+
+	m := ConvertPermissionsToPermissionTree(permissions)
+	return m, nil
+}
+
+//UpdateRolePermissions 更新角色权限
+func UpdateRolePermissions(param map[string]interface{}) error {
+
+	sql1 := "delete from fd_role_permission where role_id = ?"
+	dbProxy, err := store.GetDBProxy()
+	if err != nil {
+		logs.Error("---- get db proxy failed,err:" + err.Error() + " ----")
+		return err
+	}
+
+	dbProxy.Begin() //开启事务
+
+	roleID := int(param["roleId"].(float64))
+	permissionIds := param["permissionIds"].([]interface{})
+	_, err = dbProxy.Raw(sql1, roleID).Exec()
+	if err != nil {
+		logs.Error("---- delete role permission failed,err:" + err.Error())
+		dbProxy.Rollback() //执行失败进行回滚操作
+		return err
+	}
+
+	sql2 := "insert into fd_role_permission(role_id,permission_id,create_user,create_time,update_user,update_time) values(?,?,?,?,?,?,?)"
+	for _, permissionID := range permissionIds {
+		_, err = dbProxy.Raw(sql2, roleID, permissionID, GetLoginAdminUserName(), time.Now(), GetLoginAdminUserName(), time.Now()).Exec()
+		if err != nil {
+			logs.Error("---- insert role permission failed,err:" + err.Error())
+			dbProxy.Rollback() //执行失败进行回滚操作
+			return err
+		}
+	}
+
+	return nil
+}

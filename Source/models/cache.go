@@ -20,6 +20,11 @@ func Expire(key string, ttl int) (int, error) {
 	return expireRedis(key, ttl)
 }
 
+//DelKey 删除缓存的key
+func DelKey(key string) (int, error) {
+	return deleteKey(key)
+}
+
 func getRedis(key string) (string, int, error) {
 	logs.Debug("---- get redis starting ----")
 	conn, err := store.GetRedis()
@@ -87,6 +92,25 @@ func expireRedis(key string, ttl int) (int, error) {
 	_, err = conn.Do("expire", key, ttl)
 	if err != nil {
 		logs.Error("redis expire key:" + key + " failed,err:" + err.Error())
+		return 0, err
+	}
+
+	return 0, nil
+}
+
+func deleteKey(key string) (int, error) {
+	logs.Debug("---- expire redis starting ----")
+	conn, err := store.GetRedis()
+	if err != nil {
+		logs.Error("---- get redis conn failed,err:" + err.Error() + " ----")
+		return 0, err
+	}
+
+	defer conn.Close()
+
+	_, err = conn.Do("del", key)
+	if err != nil {
+		logs.Error("del key:" + key + " falied,err:" + err.Error())
 		return 0, err
 	}
 

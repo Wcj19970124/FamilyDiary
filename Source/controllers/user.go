@@ -23,6 +23,8 @@ const (
 	PermissionDenied    = 30005 //无权限
 	UserNameExists      = 30006 //用户名已存在
 	UserAllocateRoleErr = 30007 //用户角色分配失败
+	UserQueryRoleErr    = 30008 //用户角色查询失败
+	UserUpdateRoleErr   = 30009 //用户角色更新
 )
 
 //登陆态和权限校验
@@ -156,4 +158,56 @@ func (u *UserController) AllocateRoles() {
 		u.Report(u.Ctx.Input.IP(), "1", "POST", "0", "AllocateRoles", models.GetLoginAdminUserName(), "用户分配角色成功", time.Now())
 		u.OutPut(200, "用户分配角色成功!")
 	}
+}
+
+//QueryUserRoles 根据用户id查询用户角色
+func (u *UserController) QueryUserRoles() {
+	//TODD:基础校验
+	if ok := u.verificate(); !ok {
+		return
+	}
+	//TODD:查询
+	if id, err := u.GetInt("id"); err == nil {
+		data, err := models.QueryUserRoles(id)
+		if err != nil {
+			u.Report(u.Ctx.Input.IP(), "1", "GET", "1", "QueryUserRole", models.GetLoginAdminUserName(), "用户角色查询失败", time.Now())
+			u.OutPut(UserQueryRoleErr, "用户角色查询失败!")
+			return
+		}
+		u.Report(u.Ctx.Input.IP(), "1", "GET", "0", "QueryUserRole", models.GetLoginAdminUserName(), "用户角色查询成功", time.Now())
+		u.OutPutList(200, "用户角色查询成功!", data)
+	}
+}
+
+//UpdateUserRoles 更新用户角色信息
+func (u *UserController) UpdateUserRoles() {
+	//TODD:基础校验
+	if ok := u.verificate(); !ok {
+		return
+	}
+	//TODD:更新
+	var param map[string]interface{}
+	if json.Unmarshal(u.Ctx.Input.RequestBody, &param) == nil {
+		if err := models.UpdateUserRoles(param); err != nil {
+			u.Report(u.Ctx.Input.IP(), "1", "POST", "1", "UpdateUserRole", models.GetLoginAdminUserName(), "用户角色更新失败", time.Now())
+			u.OutPut(UserUpdateRoleErr, "用户角色更新失败!")
+			return
+		}
+		u.Report(u.Ctx.Input.IP(), "1", "POST", "0", "UpdateUserRole", models.GetLoginAdminUserName(), "用户角色更新成功", time.Now())
+		u.OutPut(200, "用户角色更新成功!")
+	}
+}
+
+//QueryLoginUserInfo 获取登陆用户信息
+func (u *UserController) QueryLoginUserInfo() {
+
+	data, err := models.QueryLoginUserInfo()
+	if err != nil {
+		u.Report(u.Ctx.Input.IP(), "1", "GET", "1", "QueryLoginUserInfo", models.GetLoginAdminUserName(), "登陆用户信息获取失败", time.Now())
+		u.OutPut(UserUpdateRoleErr, "用户信息获取失败!")
+		return
+	}
+	u.Report(u.Ctx.Input.IP(), "1", "GET", "0", "QueryLoginUserInfo", models.GetLoginAdminUserName(), "用户信息获取成功", time.Now())
+	u.OutPutList(200, "用户信息获取成功!", data)
+
 }
