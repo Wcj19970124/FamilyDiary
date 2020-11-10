@@ -107,7 +107,7 @@ func QueryDiary(id int) (map[string]interface{}, error) {
 func QueryDiaries(p common.Page) (map[string]interface{}, error) {
 
 	sql1 := "select count(id) from fd_diary"
-	sql2 := "select id,title,content,category_id,comments,goods,glance,status from fd_diary limit ?,?"
+	sql2 := "select id,title,content,category_id,comments,goods,glance,create_user,create_time,update_user,update_time,status from fd_diary limit ?,?"
 	dbProxy, err := store.GetDBProxy()
 	if err != nil {
 		logs.Error("---- get db proxy failed,err:" + err.Error() + " ----")

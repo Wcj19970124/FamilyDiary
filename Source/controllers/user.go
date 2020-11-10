@@ -7,6 +7,7 @@ import (
 
 	"../common"
 	"../models"
+	"github.com/astaxie/beego/logs"
 )
 
 //UserController 后台用户数据体
@@ -198,16 +199,18 @@ func (u *UserController) UpdateUserRoles() {
 	}
 }
 
-//QueryLoginUserInfo 获取登陆用户信息
+//QueryLoginUserInfo 获取登陆用户信息/包括角色/权限信息 ---- 用于前端生成动态路由
 func (u *UserController) QueryLoginUserInfo() {
 
-	data, err := models.QueryLoginUserInfo()
-	if err != nil {
-		u.Report(u.Ctx.Input.IP(), "1", "GET", "1", "QueryLoginUserInfo", models.GetLoginAdminUserName(), "登陆用户信息获取失败", time.Now())
-		u.OutPut(UserUpdateRoleErr, "用户信息获取失败!")
-		return
+	if token := u.Ctx.GetCookie("token"); token != "" {
+		logs.Debug(token)
+		data, err := models.QueryLoginUserInfo(token)
+		if err != nil {
+			u.Report(u.Ctx.Input.IP(), "1", "GET", "1", "QueryLoginUserInfo", models.GetLoginAdminUserName(), "登陆用户信息获取失败", time.Now())
+			u.OutPut(UserUpdateRoleErr, "用户信息获取失败!")
+			return
+		}
+		u.Report(u.Ctx.Input.IP(), "1", "GET", "0", "QueryLoginUserInfo", models.GetLoginAdminUserName(), "用户信息获取成功", time.Now())
+		u.OutPutList(200, "用户信息获取成功!", data)
 	}
-	u.Report(u.Ctx.Input.IP(), "1", "GET", "0", "QueryLoginUserInfo", models.GetLoginAdminUserName(), "用户信息获取成功", time.Now())
-	u.OutPutList(200, "用户信息获取成功!", data)
-
 }

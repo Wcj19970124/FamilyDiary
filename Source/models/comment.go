@@ -47,7 +47,7 @@ func DelComment(id int) error {
 func QueryComments(p common.Page) (map[string]interface{}, error) {
 
 	sql1 := "select count(id) from fd_diary_comment"
-	sql2 := "select id,tourist_id,diary_id,content,parent_id,goods,elite,top,status from fd_diary_comment limit ?,?"
+	sql2 := "select id,tourist_id,diary_id,content,parent_id,goods,elite,top,create_user,create_time,status from fd_diary_comment limit ?,?"
 	dbProxy, err := store.GetDBProxy()
 	if err != nil {
 		logs.Error("---- get db proxy failed,err:" + err.Error() + " ----")

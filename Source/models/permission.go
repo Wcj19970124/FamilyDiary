@@ -159,7 +159,7 @@ func QueryPermissions(p common.Page) (map[string]interface{}, error) {
 //QueryPermissionsTree 查询权限列表，返回权限树
 func QueryPermissionsTree() (map[string]interface{}, error) {
 
-	sql := "select id,permission_name,parent_id,type,url,status from fd_permission"
+	sql := "select id,permission_name,parent_id,type,url,create_user,create_time,update_user,update_time,status from fd_permission"
 	dbProxy, err := store.GetDBProxy()
 	if err != nil {
 		logs.Error("---- get db proxy failed,err:" + err.Error() + " ----")

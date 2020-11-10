@@ -126,7 +126,7 @@ func QueryCategory(id int) (map[string]interface{}, error) {
 func QueryCatrgories(p common.Page) (map[string]interface{}, error) {
 
 	sql1 := "select count(id) from fd_category"
-	sql2 := "select id,category_name,parent_id,type,description,status from fd_category limit ?,?"
+	sql2 := "select id,category_name,parent_id,type,description,create_user,create_time,update_user,update_time,status from fd_category limit ?,?"
 	dbProxy, err := store.GetDBProxy()
 	if err != nil {
 		logs.Error("---- get db proxy failed,err:" + err.Error() + " ----")
@@ -135,7 +135,7 @@ func QueryCatrgories(p common.Page) (map[string]interface{}, error) {
 
 	var categories []Category
 	p.SetStartNo() //设置搜索的起始数据索引
-	_, err = dbProxy.Raw(sql2,p.StartNo,p.PageSize).QueryRows(&categories)
+	_, err = dbProxy.Raw(sql2, p.StartNo, p.PageSize).QueryRows(&categories)
 	if err != nil {
 		logs.Error("---- query category(page) failed,err:" + err.Error())
 		return nil, err

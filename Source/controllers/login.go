@@ -63,16 +63,20 @@ func (l *UserLoginController) validParams() error {
 //第一步：先检查缓存中是否存在登陆信息,有则验证是否是本人,是则不用重复登陆,不是则重新登陆
 //第二步：若缓存没有,查询数据库,若数据库没有,直接返回
 //第三步：若数据库存在,则校验数据,正确则写缓存,不正确直接返回
-func (l *UserLoginController) checkLogin() error {
+func (l *UserLoginController) checkLogin() (map[string]interface{}, error) {
 
 	loginUserNameKey := "login_admin_username"
 	logs.Debug("---- user login cache redis key1:" + loginUserNameKey)
+
+	m := make(map[string]interface{}) //以redis存储的用户标识作为token
+	m["token"] = l._username
+
 	if val, _, err := models.GetByKey(loginUserNameKey); err == nil && val != "" {
 		if val != l._username {
 		} else {
 			l.Report(l.Ctx.Input.IP(), "0", "POST", "0", "checkLogin", models.GetLoginAdminUserName(), "已登陆！", time.Now())
-			l.OutPut(200, "已登陆！")
-			return errors.New("已登录")
+			l.OutPutList(200, "已登陆！", m)
+			return nil, errors.New("已登录")
 		}
 	}
 
@@ -80,17 +84,17 @@ func (l *UserLoginController) checkLogin() error {
 	if password == "" {
 		l.Report(l.Ctx.Input.IP(), "0", "POST", "1", "checkLogin", models.GetLoginAdminUserName(), "用户不存在", time.Now())
 		l.OutPut(UserNotExist, "用户不存在!")
-		return errors.New("用户不存在！")
+		return nil, errors.New("用户不存在！")
 	}
 	if password != util.MD5(l._password) {
 		l.Report(l.Ctx.Input.IP(), "0", "POST", "1", "checkLogin", models.GetLoginAdminUserName(), "密码错误", time.Now())
 		l.OutPut(UserLoginParamError, "密码错误!")
-		return errors.New("密码错误")
+		return nil, errors.New("密码错误")
 	}
 
 	models.SetByKey(loginUserNameKey, l._username, userLoginRedisCacheSeconds)
 
-	return nil
+	return m, nil
 }
 
 //Post 请求入口
@@ -103,11 +107,11 @@ func (l *UserLoginController) Post() {
 		return
 	}
 
-	err = l.checkLogin()
+	m, err := l.checkLogin()
 	if err != nil {
 		return
 	}
 
 	l.Report(l.Ctx.Input.IP(), "0", "POST", "0", "checkLogin", models.GetLoginAdminUserName(), "登陆成功", time.Now())
-	l.OutPut(200, "登陆成功")
+	l.OutPutList(200, "登陆成功", m)
 }

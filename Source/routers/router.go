@@ -61,5 +61,10 @@ func init() {
 
 	//评论管理
 	beego.Router("/del/comment", &controllers.CommentController{}, "delete:DelComment")
-	beego.Router("/query/comments", &controllers.CommentController{}, "post:QueryComments")
+	beego.Router("/get/comments", &controllers.CommentController{}, "post:QueryComments")
+
+	//系统日志
+	beego.Router("/del/syslog", &controllers.LogController{}, "delete:DelSysLog")
+	beego.Router("/del/syslogs", &controllers.LogController{}, "delete:DelSysLogs")
+	beego.Router("/get/syslogs", &controllers.LogController{}, "post:QuerySysLogs")
 }

@@ -130,7 +130,7 @@ func GetUserByID(id int) (map[string]interface{}, error) {
 //GetUsers 分页查询用户列表
 func GetUsers(p common.Page) (map[string]interface{}, error) {
 
-	sql1 := "select id,username,password,head,gender,remark,status from fd_user limit ?,?"
+	sql1 := "select id,username,password,head,gender,remark,create_user,create_time,update_user,update_time,status from fd_user limit ?,?"
 	sql2 := "select count(id) as totalCount from fd_user"
 	dbProxy, err := store.GetDBProxy()
 	if err != nil {
@@ -242,11 +242,11 @@ func UpdateUserRoles(param map[string]interface{}) error {
 }
 
 //QueryLoginUserInfo 获取登陆用户信息
-func QueryLoginUserInfo() (map[string]interface{}, error) {
+//第一步：获取用户基本信息
+//第二步：根据用户信息获取用户角色
+func QueryLoginUserInfo(token string) (map[string]interface{}, error) {
 
-	username := GetLoginAdminUserName()
-
-	sql := "select id,username,password,head,gender,remark from fd_user where username = ?"
+	sql1 := "select id,username,password,head,gender,remark from fd_user where username = ?"
 	dbProxy, err := store.GetDBProxy()
 	if err != nil {
 		logs.Error("---- get db proxy failed,err:" + err.Error() + " ----")
@@ -254,14 +254,24 @@ func QueryLoginUserInfo() (map[string]interface{}, error) {
 	}
 
 	var user User
-	err = dbProxy.Raw(sql, username).QueryRow(&user)
+	err = dbProxy.Raw(sql1, token).QueryRow(&user)
 	if err != nil {
 		logs.Error("---- get login user info failed,err:" + err.Error())
 		return nil, err
 	}
 
+	sql2 := " select role_name from fd_role where id in(select role_id from fd_user_role where user_id = ?)"
+
+	var roles []Role
+	_, err = dbProxy.Raw(sql2, user.Id).QueryRows(&roles)
+	if err != nil {
+		logs.Error("---- get user role info failed,err:" + err.Error())
+		return nil, err
+	}
+
 	m := make(map[string]interface{})
 	m["admin"] = user
+	m["role"] = roles
 
 	return m, nil
 }
